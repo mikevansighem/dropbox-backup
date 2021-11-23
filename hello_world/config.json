@@ -7,5 +7,6 @@
   "startup": "application",
   "boot": "auto",
   "options": {},
-  "schema": {}
+  "schema": {},
+  "url": "https://github.com/mikevansighem/test_addon",
 }
