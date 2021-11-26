@@ -1,8 +1,8 @@
 ---
 name: Test_addon
-version: dev
-slug: example
-description: Example add-on by Community Home Assistant Add-ons
+version: 0.1
+slug: test_addon
+description: My first test addon.
 url: https://github.com/mikevansighem/test_addon
 init: false
 arch:
