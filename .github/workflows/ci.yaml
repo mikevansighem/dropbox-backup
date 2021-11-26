@@ -37,20 +37,6 @@ jobs:
           fi
           echo "::set-output name=slug::$slug"
 
-  lint-addon:
-    name: Lint Add-on
-    needs:
-      - information
-    runs-on: ubuntu-latest
-    steps:
-      - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v2.4.0
-      - name: 🚀 Run Add-on Lint
-        uses: frenck/action-addon-linter@v2.5.0
-        with:
-          community: true
-          path: "./${{ needs.information.outputs.target }}"
-
   # Docker file lint
   lint-hadolint:
     name: Hadolint
