@@ -17,4 +17,4 @@ options:
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)
   seconds_between_quotes: int(1,120)
-  image: "ghcr.io/mikevansighem/test_addon/{arch}"
+image: "ghcr.io/mikevansighem/test_addon/{arch}:latest"
