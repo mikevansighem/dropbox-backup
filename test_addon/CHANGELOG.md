@@ -1,3 +1,5 @@
-# What’s changed
+## What’s changed
 
-Updates!
+## v0.3.0
+
+- Update maintainer information
