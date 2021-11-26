@@ -1,6 +1,6 @@
 ---
 name: Test_addon
-version: dev
+version: "v0.3.0"
 slug: test_addon
 description: My first test addon.
 url: https://github.com/mikevansighem/test_addon
