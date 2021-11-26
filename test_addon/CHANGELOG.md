@@ -1,4 +1,4 @@
-## What’s changed
+# What’s changed
 
 ## v0.3.0
 
