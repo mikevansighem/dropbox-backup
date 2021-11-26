@@ -174,7 +174,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v1.1.3
         with:
           token: ${{ secrets.DISPATCH_TOKEN }}
-          repository: mikevansighem/test_addon
+          repository: mikevansighem/hassio-addons
           event-type: update
           client-payload: >
             {
