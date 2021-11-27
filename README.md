@@ -58,17 +58,12 @@ option to `"jpg|png"` will upload all files in the `/share` folder ending in
 `.jpg` or `.png`. These files will be uploaded to the directory
 specified by the `output` option.
 
-_Note_: The hash `7be23ff5` that is prepended to the `dropbox_sync` add-on
-slug above is required. [See below](#repository-slugs-in-hassio) for an
-explanation.
-
 ### Configuration
 
-To access your personal Dropobox, this add-on (and the `Dropbox-Uploader`
-script more generally) requires an access token. Follow these steps to
-create an Access Token:
+To access your personal Dropbox, this add-on requires an access token.
+Follow these steps to create an Access Token:
 
-1. Go to `https://www.dropbox.com/developers/apps`
+1. Go to [Your Dropbox apps](https://www.dropbox.com/developers/apps)
 2. Click the "Create App" button
 3. Follow the prompts to set permissions and choose a unique name for your
 "app" token.
