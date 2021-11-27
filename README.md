@@ -1,3 +1,6 @@
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
+
 # Hass.io Add-on: Dropbox Sync
 
 Back up your Hass.io snapshots to Dropbox.
@@ -14,9 +17,6 @@ This add-on uses the [Dropbox-Uploader](https://github.com/andreafabrizi/Dropbox
 bash script to upload files to Dropbox. It requires that you generate an access
 token via the Dropbox Web UI, which must be added to this add-on's
 configuration via the Hass.io UI (see below for further details).
-
-<!-- markdownlint-capture -->
-<!-- markdownlint-disable -->
 
 ## Installation
 
@@ -43,8 +43,6 @@ the `oauth_access_token` label.
 |`output`|Yes|The target directory in your Dropbox to which you want to upload. If left empty, defaults to `/`, which represents the top level of directory of your Dropbox.|
 |`keep_last`|No|If set, the number of snapshots to keep locally. If there are more than this number of snapshots stored locally, the older snapshots will be deleted from local storage after being uploaded to Dropbox. If not set, no snapshots are deleted from local storage.|
 |`filetypes`|No|File extensions of files to upload from `/share` directory, seperated by <code>&#124;</code> (ex: `"jpg|png" or "png"`).|
-
-<!-- markdownlint-restore -->
 
 Example Configuration:
 
@@ -89,3 +87,5 @@ seperated by `|` to upload matching files to Dropbox. For example, setting this
 option to `"jpg|png"` will upload all files in the `/share` folder ending in
 `.jpg` or `.png`. These files will be uploaded to the directory
 specified by the `output` option.
+
+<!-- markdownlint-restore -->
