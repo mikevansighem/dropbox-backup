@@ -17,11 +17,43 @@ configuration via the Hass.io UI (see below for further details).
 
 ## Installation
 
-1. Add the add-ons repository to your Hass.io instance:
-`https://github.com/mikevansighem/dropbox_sync`
-2. Install the Dropbox Sync add-on
+1. Add the add-ons repository to your Hass.io instance: `https://github.com/mikevansighem/dropbox_sync`.
+2. Install the Dropbox Sync add-on.
 3. Configure the add-on with your Dropbox OAuth Token and desired output
-directory (see configuration below)
+directory (see configuration below).
+
+## Configuration
+
+To access your personal Dropbox, this add-on requires an access token.
+Follow these steps to create an Access Token:
+
+1. Go to [Your Dropbox apps](https://www.dropbox.com/developers/apps).
+2. Click the "Create App" button.
+3. Follow the prompts to set permissions and choose a unique name for your
+"app" token.
+
+Once you have created the token, copy it into this add-on's configuration under
+the `oauth_access_token` label.
+
+|Parameter|Required|Description|
+|---------|--------|-----------|
+|`oauth_access_token`|Yes|The "app" access token you generated above via the Dropbox UI.|
+|`output`|Yes|The target directory in your Dropbox to which you want to upload. If left empty, defaults to `/`, which represents the top level of directory of your Dropbox.|
+|`keep_last`|No|If set, the number of snapshots to keep locally. If there are more than this number of snapshots stored locally, the older snapshots will be deleted from local storage after being uploaded to Dropbox. If not set, no snapshots are deleted from local storage.|
+|`filetypes`|No|File extensions of files to upload from `/share` directory, seperated by `|` (ex: `"jpg|png" or "png"`).|
+of snapshots stored locally, the older snapshots will be deleted from local storage after being
+uploaded to Dropbox. If not set, no snapshots are deleted from local storage.|
+|`filetypes`|No|File extensions of files to upload from `/share` directory, seperated by
+`|` (ex: `"jpg|png" or "png"`).|
+
+Example Configuration:
+
+```json
+{
+  "oauth_access_token": "<YOUR_TOKEN>",
+  "output": "/hasssio-backups/"
+}
+```
 
 ## Usage
 
@@ -57,36 +89,3 @@ seperated by `|` to upload matching files to Dropbox. For example, setting this
 option to `"jpg|png"` will upload all files in the `/share` folder ending in
 `.jpg` or `.png`. These files will be uploaded to the directory
 specified by the `output` option.
-
-### Configuration
-
-To access your personal Dropbox, this add-on requires an access token.
-Follow these steps to create an Access Token:
-
-1. Go to [Your Dropbox apps](https://www.dropbox.com/developers/apps)
-2. Click the "Create App" button
-3. Follow the prompts to set permissions and choose a unique name for your
-"app" token.
-
-Once you have created the token, copy it into this add-on's configuration under
-the `oauth_access_token` label.
-
-|Parameter|Required|Description|
-|---------|--------|-----------|
-|`oauth_access_token`|Yes|The "app" access token you generated above via the Dropbox UI.|
-|`output`|Yes|The target directory in your Dropbox to which you want to upload. If left empty, defaults to `/`, which represents the top level of directory of your Dropbox.|
-|`keep_last`|No|If set, the number of snapshots to keep locally. If there are more than this number of snapshots stored locally, the older snapshots will be deleted from local storage after being uploaded to Dropbox. If not set, no snapshots are deleted from local storage.|
-|`filetypes`|No|File extensions of files to upload from `/share` directory, seperated by <code>&#124;</code> (ex: `"jpg|png" or "png"`).|
-of snapshots stored locally, the older snapshots will be deleted from local storage after being
-uploaded to Dropbox. If not set, no snapshots are deleted from local storage.|
-|`filetypes`|No|File extensions of files to upload from `/share` directory, seperated by
-`|` (ex: `"jpg|png" or "png"`).|
-
-Example Configuration:
-
-```json
-{
-  "oauth_access_token": "<YOUR_TOKEN>",
-  "output": "/hasssio-backups/"
-}
-```
