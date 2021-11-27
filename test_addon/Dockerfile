@@ -7,6 +7,13 @@ ENV LANG C.UTF-8
 
 # Setup base
 RUN apk add --no-cache jq curl findutils python3 python3-dev
+
+
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir nibabel pydicom matplotlib pillow && \
+    pip install --no-cache-dir med2image
+
+
 # RUN apk add --no-cache python3-pip
 RUN pip3 install requests
 RUN python -m pip install requests
