@@ -8,7 +8,7 @@ ENV LANG C.UTF-8
 # Setup base
 RUN apk add --no-cache jq curl findutils python3 python3-dev
 # RUN apk add --no-cache python3-pip
-RUN python3 -m pip install requests
+RUN pip3 install requests
 RUN python -m pip install requests
 RUN pip install requests python-dateutil==2.6.1 pytz==2018.3
 
