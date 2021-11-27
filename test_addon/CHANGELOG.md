@@ -7,11 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.2](https://github.com/mikevansighem/test_addon/releases/tag/0.3.2) - 2021-11-27
+
 ### Changed
 
 - Update readme.
 - Update changelog format.
 - Update config description.
+
+### Added
+
 - Add Dopbox sync fields in config.
 
 ## [0.3.1](https://github.com/mikevansighem/test_addon/releases/tag/0.3.1) - 2021-11-27
