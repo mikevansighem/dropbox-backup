@@ -1,5 +1,9 @@
 # What’s changed
 
-## v0.3.0
+## Update 0.3.1
 
-- Update maintainer information
+- Fix package version.
+
+## Update 0.3.0
+
+- Update maintainer information.
