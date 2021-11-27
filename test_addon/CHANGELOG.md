@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Nothing new yet.
 
+## [0.3.4](https://github.com/mikevansighem/test_addon/releases/tag/0.3.4) - 2021-11-27
+
+### Changed
+
+- Update default config options.
+
 ## [0.3.3](https://github.com/mikevansighem/test_addon/releases/tag/0.3.3) - 2021-11-27
 
 ### Changed
