@@ -1,3 +1,4 @@
+# Set build env
 ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:10.2.3
 FROM ${BUILD_FROM}
 
@@ -6,8 +7,8 @@ ENV LANG C.UTF-8
 
 # Setup base
 RUN apk add --no-cache jq curl findutils python3 python3-dev
-RUN apk add --no-cache python3-pip
-RUN pip3 install requests python-dateutil==2.6.1 pytz==2018.3
+# RUN apk add --no-cache python3-pip
+RUN pip install requests python-dateutil==2.6.1 pytz==2018.3
 
 # Build arguments
 ARG BUILD_ARCH
