@@ -1,5 +1,3 @@
-<!-- markdownlint-disable-file -->
-
 # Hass.io Add-on: Dropbox Sync
 
 Back up your Hass.io snapshots to Dropbox.
