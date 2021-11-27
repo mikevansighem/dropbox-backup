@@ -37,7 +37,7 @@ jobs:
           fi
           echo "::set-output name=slug::$slug"
 
-  Docker file lint
+  # Docker file lint
   lint-hadolint:
    name: Hadolint
    needs:
