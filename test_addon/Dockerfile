@@ -3,9 +3,11 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:10.2.3
 FROM ${BUILD_FROM}
 
 # Setup base
-RUN apk add --no-cache \
-    coreutils=8.32-r2 \
-    wget=1.21.1-r1
+RUN apk add --no-cache jq curl findutils python3 python3-dev && \
+    pip3 install requests python-dateutil==2.6.1 pytz==2018.3
+
+# Add env
+ENV LANG C.UTF-8
 
 # Build arguments
 ARG BUILD_ARCH
@@ -35,3 +37,13 @@ LABEL \
     org.opencontainers.image.created=${BUILD_DATE} \
     org.opencontainers.image.revision=${BUILD_REF} \
     org.opencontainers.image.version=${BUILD_VERSION}
+
+# Copy data
+COPY run.sh /
+COPY keep_last.py /
+RUN ["chmod", "a+x", "/run.sh"]
+RUN curl "https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/master/dropbox_uploader.sh" -o /dropbox_uploader.sh
+RUN ["chmod", "a+x", "/dropbox_uploader.sh"]
+WORKDIR /
+
+CMD [ "/run.sh" ]

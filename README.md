@@ -78,7 +78,7 @@ After the add-on is configured and started, trigger an upload by calling the
 ```yaml
 service: hassio.addon_stdin
 data:
-  addon: 7be23ff5_dropbox_sync
+  addon: 0fdda7d5_test_addon
   input:
     command: upload
 

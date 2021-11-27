@@ -23,8 +23,8 @@ map: [backup, share]
 options:
   oauth_access_token: "<YOUR_ACCESS_TOKEN>"
   output: "/backup/"
-  filetypes: "tar"
-  keep_last: 0
+  # filetypes: "tar"
+  # keep_last: 0
 
 # Types
 schema:
