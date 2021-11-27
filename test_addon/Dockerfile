@@ -7,7 +7,7 @@ ENV LANG C.UTF-8
 
 # Install dependancies
 RUN apk add --no-cache findutils python3 python3-dev py3-pip && \
-    pip3 install requests python-dateutil==2.6.1 pytz==2018.3
+    pip3 install requests==2.26.0 python-dateutil==2.6.1 pytz==2018.3
 
 # Build arguments
 ARG BUILD_ARCH

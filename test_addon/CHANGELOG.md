@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Add-on description.
+- Install Python dependencies.
 
 ## [0.3.6](https://github.com/mikevansighem/test_addon/releases/tag/0.3.6) - 2021-11-27
 
