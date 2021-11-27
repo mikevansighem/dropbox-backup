@@ -1,7 +1,5 @@
 # Hass.io Add-on: Dropbox Sync
 
-Back up your Hass.io snapshots to Dropbox.
-
 [![Last commit](https://img.shields.io/github/last-commit/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/commits/master)
 [![Commits per month](https://img.shields.io/github/commit-activity/m/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/commits/master)
 [![License](https://img.shields.io/github/license/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/blob/master/LICENSE)
@@ -10,6 +8,14 @@ Back up your Hass.io snapshots to Dropbox.
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/releases)
 
 ![Supports armhf Architecture](https://img.shields.io/badge/armhf-yes-green?style=flat-square)
+![Supports armv7 Architecture](https://img.shields.io/badge/armv7-yes-green?style=flat-square)
+![Supports aarch64 Architecture](https://img.shields.io/badge/aarch64-yes-green?style=flat-square)
+![Supports amd64 Architecture](https://img.shields.io/badge/amd64-yes-green?style=flat-square)
+![Supports i386 Architecture](https://img.shields.io/badge/i386-yes-green?style=flat-square)
+
+---
+
+Back up your Hass.io snapshots to Dropbox.
 
 ## :page_facing_up: About
 
