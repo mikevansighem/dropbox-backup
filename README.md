@@ -1,5 +1,4 @@
-<!-- markdownlint-capture -->
-<!-- markdownlint-disable -->
+<!-- markdownlint-disable-file -->
 
 # Hass.io Add-on: Dropbox Sync
 
@@ -87,5 +86,3 @@ seperated by `|` to upload matching files to Dropbox. For example, setting this
 option to `"jpg|png"` will upload all files in the `/share` folder ending in
 `.jpg` or `.png`. These files will be uploaded to the directory
 specified by the `output` option.
-
-<!-- markdownlint-restore -->
