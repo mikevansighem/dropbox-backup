@@ -5,19 +5,11 @@ FROM ${BUILD_FROM}
 # Add env
 ENV LANG C.UTF-8
 
-# Setup base
-RUN apk add --no-cache jq curl findutils python3 python3-dev
+RUN ls
 
-
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir nibabel pydicom matplotlib pillow && \
-    pip install --no-cache-dir med2image
-
-
-# RUN apk add --no-cache python3-pip
-RUN pip3 install requests
-RUN python -m pip install requests
-RUN pip install requests python-dateutil==2.6.1 pytz==2018.3
+# Install dependancies
+# RUN apk add --no-cache jq curl findutils python3 python3-dev && \
+#    pip3 install requests python-dateutil==2.6.1 pytz==2018.3
 
 # Build arguments
 ARG BUILD_ARCH
