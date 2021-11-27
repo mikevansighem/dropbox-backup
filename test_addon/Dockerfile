@@ -3,8 +3,9 @@ ARG BUILD_FROM=ghcr.io/hassio-addons/base/amd64:10.2.3
 FROM ${BUILD_FROM}
 
 # Setup base
+# hadolint ignore=DL3018
 RUN apk add --no-cache jq curl findutils python3 python3-dev && \
-    pip3 install requests==2.26.0 python-dateutil==2.6.1 pytz==2018.3
+    pip3 install --no-cache-dir requests==2.26.0 python-dateutil==2.6.1 pytz==2018.3
 
 # Add env
 ENV LANG C.UTF-8
