@@ -96,7 +96,7 @@ jobs:
     name: Build ${{ matrix.architecture }}
     needs:
       - information
-      # - lint-hadolint
+      - lint-hadolint
       - lint-json
       # - lint-markdown
       - lint-shellcheck
