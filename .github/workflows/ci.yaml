@@ -50,6 +50,7 @@ jobs:
         uses: brpaz/hadolint-action@v1.5.0
         with:
           dockerfile: "./${{ needs.information.outputs.target }}/Dockerfile"
+          config: ".hadolint"
 
   lint-json:
     name: JSON Lint
