@@ -1,4 +1,4 @@
-# Hass.io Add-on: Dropbox Sync
+# Home Assistant add-on: Dropbox backup
 
 [![Last commit](https://img.shields.io/github/last-commit/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/commits/master)
 [![Commits per month](https://img.shields.io/github/commit-activity/m/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/commits/master)
@@ -13,12 +13,12 @@
 ![Supports amd64 Architecture](https://img.shields.io/badge/amd64-yes-green?style=flat-square)
 ![Supports i386 Architecture](https://img.shields.io/badge/i386-yes-green?style=flat-square)
 
-Back up your Hass.io snapshots to Dropbox.
+Upload your Home Assistant backups to Dropbox.
 
 ## :page_facing_up: About
 
-This add-on allows you to upload your Hass.io snapshots to your Dropbox,
-keeping your snapshots safe and available in case of hardware failure. Uploads
+This add-on allows you to upload your Home Assistant backups to your Dropbox,
+keeping your backups safe and available in case of hardware failure. Uploads
 are triggered via a service call, making it easy to automate periodic backups
 or trigger uploads to Dropbox via script as you would with any other Home
 Assistant service.
@@ -26,12 +26,12 @@ Assistant service.
 This add-on uses the [Dropbox-Uploader](https://github.com/andreafabrizi/Dropbox-Uploader)
 bash script to upload files to Dropbox. It requires that you generate an access
 token via the Dropbox Web UI, which must be added to this add-on's
-configuration via the Hass.io UI (see below for further details).
+configuration via the Home Assistant UI (see below for further details).
 
 ## Installation
 
 1. Add this repository to your Hass.io instance: `https://github.com/mikevansighem/dropbox_sync`.
-2. Install the Dropbox Sync add-on.
+2. Install the Dropbox backup add-on.
 3. Configure the add-on with your Dropbox OAuth Token and desired output
 directory (see configuration below).
 
