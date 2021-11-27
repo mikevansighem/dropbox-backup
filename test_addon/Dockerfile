@@ -7,7 +7,7 @@ ENV LANG C.UTF-8
 
 # Install dependancies
 RUN apk add --no-cache findutils python3 python3-dev
-RUN apt-get install -y python3-pip
+RUN apk add py3-pip
 RUN pip3 install requests python-dateutil==2.6.1 pytz==2018.3
 
 # Build arguments
