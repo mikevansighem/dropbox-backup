@@ -15,6 +15,9 @@ bash script to upload files to Dropbox. It requires that you generate an access
 token via the Dropbox Web UI, which must be added to this add-on's
 configuration via the Hass.io UI (see below for further details).
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
+
 ## Installation
 
 1. Add the add-ons repository to your Hass.io instance: `https://github.com/mikevansighem/dropbox_sync`.
@@ -29,8 +32,7 @@ Follow these steps to create an Access Token:
 
 1. Go to [Your Dropbox apps](https://www.dropbox.com/developers/apps).
 2. Click the "Create App" button.
-3. Follow the prompts to set permissions and choose a unique name for your
-"app" token.
+3. Follow the prompts to set permissions and choose a unique name for your "app" token.
 
 Once you have created the token, copy it into this add-on's configuration under
 the `oauth_access_token` label.
@@ -45,6 +47,8 @@ of snapshots stored locally, the older snapshots will be deleted from local stor
 uploaded to Dropbox. If not set, no snapshots are deleted from local storage.|
 |`filetypes`|No|File extensions of files to upload from `/share` directory, seperated by
 `|` (ex: `"jpg|png" or "png"`).|
+
+<!-- markdownlint-restore -->
 
 Example Configuration:
 
