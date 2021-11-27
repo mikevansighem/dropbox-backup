@@ -9,6 +9,8 @@ Back up your Hass.io snapshots to Dropbox.
 [![GitHub issues](https://img.shields.io/github/issues-raw/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/issues)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/releases)
 
+![Supports armhf Architecture](https://img.shields.io/badge/armhf-yes-green?style=flat-square)
+
 ## :page_facing_up: About
 
 This add-on allows you to upload your Hass.io snapshots to your Dropbox,
