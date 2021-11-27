@@ -34,7 +34,7 @@ After the add-on is configured and started, trigger an upload by calling the `ha
 service with the following service data:
 
 ```json
-{"addon":"7be23ff5_dropbox_sync","input":{"command":"upload"}}
+{ "addon": "7be23ff5_dropbox_sync", "input": { "command": "upload" } }
 ```
 
 This triggers the `dropbox_uploader.sh` script with the provided access token. You can use
@@ -63,6 +63,7 @@ specified by the `output` option.
 
 To access your personal Dropobox, this add-on (and the `Dropbox-Uploader` script more generally)
 requires an access token. Follow these steps to create an Access Token:
+
 1. Go to `https://www.dropbox.com/developers/apps`
 2. Click the "Create App" button
 3. Follow the prompts to set permissions and choose a unique name for your "app" token.
@@ -96,8 +97,6 @@ If you have suggestions or use-cases not covered by this add-on, please leave a 
 [the forum topic](https://community.home-assistant.io/t/hass-io-add-on-upload-hassio-snapshots-to-dropbox/).
 Otherwise, you may file an issue here. The flexibility of the service call and JSON service data
 means that this add-on could be expanded to include new features or options relatively easily.
-
-----
 
 #### Repository slugs in Hassio
 
