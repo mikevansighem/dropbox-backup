@@ -13,8 +13,6 @@
 ![Supports amd64 Architecture](https://img.shields.io/badge/amd64-yes-green?style=flat-square)
 ![Supports i386 Architecture](https://img.shields.io/badge/i386-yes-green?style=flat-square)
 
----
-
 Back up your Hass.io snapshots to Dropbox.
 
 ## :page_facing_up: About
