@@ -2,7 +2,7 @@
 name: Test_addon
 version: "0.3.6"
 slug: test_addon
-description: "Upload your Hass.io backups to Dropbox"
+description: "Upload your Home Assistant backups to Dropbox"
 url: https://github.com/mikevansighem/test_addon
 init: false
 arch:

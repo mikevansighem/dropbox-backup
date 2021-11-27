@@ -1,8 +1,8 @@
 # Home Assistant add-on: Dropbox backup
 
-[![Last commit](https://img.shields.io/github/last-commit/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/commits/master)
-[![Commits per month](https://img.shields.io/github/commit-activity/m/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/commits/master)
-[![License](https://img.shields.io/github/license/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/blob/master/LICENSE)
+[![Last commit](https://img.shields.io/github/last-commit/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/commits/main)
+[![Commits per month](https://img.shields.io/github/commit-activity/m/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/commits/main)
+[![License](https://img.shields.io/github/license/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/blob/main/LICENSE)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mikevansighem/test_addon/CI?style=flat-square)](https://github.com/mikevansighem/test_addon/actions)
 [![GitHub issues](https://img.shields.io/github/issues-raw/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/issues)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/releases)
