@@ -1,10 +1,19 @@
 ---
 configuration:
-  log_level:
-    name: Log level
-    description: The amount of logging the add-on should do.
-  seconds_between_quotes:
-    name: Seconds between quotes
+
+  oauth_access_token:
+    name: Oauth access token
+    description: The "app" access token you generate via the Dropbox UI.
+
+  output:
+    name: Output
     description: >-
-      The number of seconds the add-on waits until showing a new quote in the
-      add-on log.
+      The target directory in your Dropbox to which you want to upload.
+
+  keep_last:
+    name: Keep last
+    description: The number of backups to keep locally.
+
+  filetypes:
+    name: Filetypes
+    description: File extensions of files to upload.

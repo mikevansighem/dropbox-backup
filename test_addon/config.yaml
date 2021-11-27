@@ -21,8 +21,6 @@ map: [backup, share]
 
 # Fields available in configuration tab with default values.
 options:
-  log_level: info
-  seconds_between_quotes: 5
   oauth_access_token: "<YOUR_ACCESS_TOKEN>"
   output: "/backup/"
   filetypes: "tar"
@@ -30,8 +28,6 @@ options:
 
 # Types
 schema:
-  log_level: list(trace|debug|info|notice|warning|error|fatal)
-  seconds_between_quotes: int(1,120)
   oauth_access_token: str
   output: str
   keep_last: int(0,)?

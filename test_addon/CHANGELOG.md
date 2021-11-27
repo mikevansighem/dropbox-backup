@@ -7,7 +7,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
-Nothing new yet.
+- Add backup functionality.
+- Remove sample code.
+
 
 ## [0.3.5](https://github.com/mikevansighem/test_addon/releases/tag/0.3.5) - 2021-11-27
 
