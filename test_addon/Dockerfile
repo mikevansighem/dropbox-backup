@@ -6,8 +6,8 @@ FROM ${BUILD_FROM}
 ENV LANG C.UTF-8
 
 # Install dependancies
-RUN apk add --no-cache findutils python3 python3-dev py3-pip && \
-    pip3 install requests==2.26.0 python-dateutil==2.6.1 pytz==2018.3
+RUN apk add --no-cache findutils==4.8.0-r1 python3==3.9.5-r2 python3-dev==3.9.5-r2 py3-pip==20.3.4-r1 && \
+    pip3 install --no-cache-dir requests==2.26.0 python-dateutil==2.6.1 pytz==2018.3
 
 # Build arguments
 ARG BUILD_ARCH

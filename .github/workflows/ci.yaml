@@ -39,17 +39,17 @@ jobs:
 
   # Docker file lint
   lint-hadolint:
-   name: Hadolint
-   needs:
-     - information
-   runs-on: ubuntu-latest
-   steps:
-     - name: ⤵️ Check out code from GitHub
-       uses: actions/checkout@v2.4.0
-     - name: 🚀 Run Hadolint
-       uses: brpaz/hadolint-action@v1.5.0
-       with:
-         dockerfile: "./${{ needs.information.outputs.target }}/Dockerfile"
+    name: Hadolint
+    needs:
+      - information
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v2.4.0
+      - name: 🚀 Run Hadolint
+        uses: brpaz/hadolint-action@v1.5.0
+        with:
+          dockerfile: "./${{ needs.information.outputs.target }}/Dockerfile"
 
   lint-json:
     name: JSON Lint
