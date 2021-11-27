@@ -2,7 +2,13 @@
 
 Back up your Hass.io snapshots to Dropbox.
 
-## About
+[![Last commit](https://img.shields.io/github/last-commit/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/commits/master)
+[![Commits per month](https://img.shields.io/github/commit-activity/m/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/commits/master)
+[![License](https://img.shields.io/github/license/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/blob/master/LICENSE)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mikevansighem/test_addon/Home%20Assistant%20CI?style=flat-square)](https://github.com/mikevansighem/test_addon/actions)
+[![GitHub issues](https://img.shields.io/github/issues-raw/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/issues)
+
+## :page_facing_up: About
 
 This add-on allows you to upload your Hass.io snapshots to your Dropbox,
 keeping your snapshots safe and available in case of hardware failure. Uploads
@@ -17,7 +23,7 @@ configuration via the Hass.io UI (see below for further details).
 
 ## Installation
 
-1. Add the add-ons repository to your Hass.io instance: `https://github.com/mikevansighem/dropbox_sync`.
+1. Add this repository to your Hass.io instance: `https://github.com/mikevansighem/dropbox_sync`.
 2. Install the Dropbox Sync add-on.
 3. Configure the add-on with your Dropbox OAuth Token and desired output
 directory (see configuration below).
