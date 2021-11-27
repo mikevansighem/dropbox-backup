@@ -43,10 +43,12 @@ the `oauth_access_token` label.
 
 Example Configuration:
 
-```json
+```yaml
 {
-  "oauth_access_token": "<YOUR_TOKEN>",
-  "output": "/hasssio-backups/"
+  oauth_access_token: "<YOUR_TOKEN>"
+  output: "/hasssio-backups/"
+  keep_last: 2
+  filetypes: "tag|zip"
 }
 ```
 
@@ -60,8 +62,13 @@ listening for service calls.
 After the add-on is configured and started, trigger an upload by calling the
 `hassio.addon_stdin` service with the following service data:
 
-```json
-{ "addon": "7be23ff5_dropbox_sync", "input": { "command": "upload" } }
+```yaml
+service: hassio.addon_stdin
+data:
+  addon: 7be23ff5_dropbox_sync
+  input:
+    command: upload
+
 ```
 
 This triggers the `dropbox_uploader.sh` script with the provided access token.
