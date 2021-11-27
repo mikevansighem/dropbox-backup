@@ -4,7 +4,7 @@ FROM ${BUILD_FROM}
 
 # Setup base
 RUN apk add --no-cache jq curl findutils python3 python3-dev && \
-    pip3 install requests python-dateutil==2.6.1 pytz==2018.3
+    pip3 install requests==2.26.0 python-dateutil==2.6.1 pytz==2018.3
 
 # Add env
 ENV LANG C.UTF-8
