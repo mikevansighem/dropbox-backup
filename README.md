@@ -5,8 +5,9 @@ Back up your Hass.io snapshots to Dropbox.
 [![Last commit](https://img.shields.io/github/last-commit/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/commits/master)
 [![Commits per month](https://img.shields.io/github/commit-activity/m/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/commits/master)
 [![License](https://img.shields.io/github/license/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/blob/master/LICENSE)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mikevansighem/test_addon/Home%20Assistant%20CI?style=flat-square)](https://github.com/mikevansighem/test_addon/actions)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mikevansighem/test_addon/CI?style=flat-square)](https://github.com/mikevansighem/test_addon/actions)
 [![GitHub issues](https://img.shields.io/github/issues-raw/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/issues)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/releases)
 
 ## :page_facing_up: About
 
