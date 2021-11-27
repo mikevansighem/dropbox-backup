@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [0.3.6](https://github.com/mikevansighem/test_addon/releases/tag/0.3.6) - 2021-11-27
+
 ### Changed
 
 - Update translations.
@@ -15,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add backup functionality.
 - Sample automation.
+- License.
+- Badges.
 
 ## Removed
 
