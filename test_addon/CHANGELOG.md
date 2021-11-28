@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+
+- Renamed snapshots to backups in log messages.
+- Improved installation instructions.
+
 ## [0.4.2](https://github.com/mikevansighem/test_addon/releases/tag/0.4.2) - 2021-11-28
 
 ### Changed
