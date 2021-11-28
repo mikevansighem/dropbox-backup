@@ -2,9 +2,8 @@
 
 CONFIG_PATH=/data/options.json
 
-# Authentication keys
-APP_KEY=$(jq --raw-output ".oauth_app_key" $CONFIG_PATH)
-APP_SECRET=$(jq --raw-output ".oauth_app_secret" $CONFIG_PATH)
+# Authentication token
+TOKEN=$(jq --raw-output ".oauth_access_token" $CONFIG_PATH)
 
 # Configuration
 OUTPUT_DIR=$(jq --raw-output ".output // empty" $CONFIG_PATH)
@@ -17,11 +16,8 @@ fi
 
 echo "[Info] Files will be uploaded to: ${OUTPUT_DIR}"
 
-echo "[Info] Saving OAUTH_APP_KEY to /etc/uploader.conf"
-echo "OAUTH_APP_KEY=${APP_KEY}" >> /etc/uploader.conf
-
-echo "[Info] Saving OAUTH_APP_SECRET to /etc/uploader.conf"
-echo "OAUTH_APP_SECRET=${APP_SECRET}" >> /etc/uploader.conf
+echo "[Info] Saving OAUTH_ACCESS_TOKEN to /etc/uploader.conf"
+echo "OAUTH_ACCESS_TOKEN=${TOKEN}" >> /etc/uploader.conf
 
 echo "[Info] Listening for messages via stdin service call..."
 

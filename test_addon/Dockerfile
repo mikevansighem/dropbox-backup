@@ -42,7 +42,9 @@ LABEL \
 COPY run.sh /
 COPY keep_last.py /
 RUN ["chmod", "a+x", "/run.sh"]
-RUN curl "https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/master/dropbox_uploader.sh" -o /dropbox_uploader.sh
+
+# Get the dropbox_uploader file from a specific commit.
+RUN curl "https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/4fbd6cec2c6df7623290ce3168e3b9c51d2dd51b/dropbox_uploader.sh" -o /dropbox_uploader.sh
 RUN ["chmod", "a+x", "/dropbox_uploader.sh"]
 WORKDIR /
 
