@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [0.4.2](https://github.com/mikevansighem/test_addon/releases/tag/0.4.2) - 2021-11-28
+
+### Changed
+
+- Version of Dropbox-uploader used.
+
+### Added
+
+- Addon icon.
+
 ## [0.4.1](https://github.com/mikevansighem/test_addon/releases/tag/0.4.1) - 2021-11-28
 
 ### Changed
@@ -17,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Authentication method
+- Authentication method.
 
 ## [0.3.7](https://github.com/mikevansighem/test_addon/releases/tag/0.3.7) - 2021-11-27
 

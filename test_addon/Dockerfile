@@ -44,7 +44,7 @@ COPY keep_last.py /
 RUN ["chmod", "a+x", "/run.sh"]
 
 # Get the dropbox_uploader file from a specific commit.
-RUN curl "https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/4fbd6cec2c6df7623290ce3168e3b9c51d2dd51b/dropbox_uploader.sh" -o /dropbox_uploader.sh
+RUN curl "https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/4ccc5c10a7b0b7a41ab4faa52585f015ed2ae568/dropbox_uploader.sh" -o /dropbox_uploader.sh
 RUN ["chmod", "a+x", "/dropbox_uploader.sh"]
 WORKDIR /
 
