@@ -1,9 +1,13 @@
 ---
 configuration:
 
-  oauth_access_token:
-    name: Oauth access token
-    description: The "app" access token you generate via the Dropbox UI.
+  oauth_app_key:
+    name: Oauth app key
+    description: The "app" key you generate via the Dropbox UI.
+
+  oauth_app_secret:
+    name: Oauth app secret
+    description: The "app" secret you generate via the Dropbox UI.
 
   output:
     name: Output
