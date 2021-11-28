@@ -1,0 +1,18 @@
+# Dropbox app settings
+
+ 1) Open the following URL in your Browser, and log in using your account: https://www.dropbox.com/developers/apps
+ 2) Click on "Create App", then select "Choose an API: Scoped Access"
+ 3) "Choose the type of access you need: App folder"
+ 4) Enter the "App Name" that you prefer (e.g. MyUploader42332445026208), must be unique
+ Now, click on the "Create App" button.
+ 5) Now the new configuration is opened, switch to tab "permissions" and check "files.metadata.read/write" and "files.content.read/write"
+ Now, click on the "Submit" button.
+ 6) Now to tab "settings" and provide the following information:
+
+
+
+    echo -ne " App key: "
+    read -r OAUTH_APP_KEY
+
+    echo -ne " App secret: "
+    read -r OAUTH_APP_SECRET

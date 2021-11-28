@@ -22,13 +22,15 @@ map: [backup, share]
 # Fields available in configuration tab with default values.
 options:
   oauth_access_token: "<YOUR_ACCESS_TOKEN>"
+  oauth_app_key: "<YOUR_APP_KEY>"
+  oauth_app_secret: "<YOUR_APP_SECRET>"
   output: "/backup/"
-  # filetypes: "tar"
-  # keep_last: 0
 
 # Types
 schema:
   oauth_access_token: str
+  oauth_app_key: str
+  oauth_app_secret: str
   output: str
   keep_last: int(0,)?
   filetypes: str?
