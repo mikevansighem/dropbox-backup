@@ -92,16 +92,14 @@ jobs:
       - name: 🚀 Run YAMLLint
         uses: frenck/action-yamllint@v1.1
 
-  lint-flake8:
-    name: Flake8
+  lint-black:
+    name: Black
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v2.4.0
-      - name: 🏗 Set up Python environment
-        uses: actions/setup-python@v1
-      - name: 🚀 Run Flake8
-        uses: py-actions/flake8@v1
+      - name: 🚀 Run Black
+        uses: psf/black@stable
 
   build:
     name: Build ${{ matrix.architecture }}
@@ -112,10 +110,12 @@ jobs:
       # - lint-markdown
       - lint-shellcheck
       - lint-yamllint
+      - lint-black
     runs-on: ubuntu-latest
     strategy:
       matrix:
         architecture: ${{ fromJson(needs.information.outputs.architectures) }}
+
     steps:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v2.4.0
