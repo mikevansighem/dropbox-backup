@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+### Changed
+
+- Specify Python packages in `requirements.txt`.
+
 ## [0.4.3](https://github.com/mikevansighem/test_addon/releases/tag/0.4.3) - 2021-11-29
 
 ### Changed
