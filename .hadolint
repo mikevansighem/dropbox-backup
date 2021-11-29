@@ -2,3 +2,4 @@ failure-threshold: error
 override:
   warning:
     - DL3006
+    - DL3059
