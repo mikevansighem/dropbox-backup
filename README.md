@@ -32,7 +32,7 @@ bash script to upload files to Dropbox. It requires that you generate an access
 token via the Dropbox Web UI, which must be added to this add-on's
 configuration via the Home Assistant UI (see below for further details).
 
-## Installation
+## ⤵️ Installation
 
 1. Go to the Supervisor add-on store in Home Assistant.
 2. Click on the "three-dots-menu" and choose `Repositories`.
@@ -41,7 +41,7 @@ configuration via the Home Assistant UI (see below for further details).
 5. Configure the add-on with your Dropbox OAuth Token and desired output
 directory (see configuration below).
 
-## Configuration
+## 🏗 Configuration
 
 ### Generate Dropbox access token
 
@@ -79,7 +79,7 @@ Example configuration:
 }
 ```
 
-## Usage
+## 🚀 Usage
 
 Dropbox Sync uploads all snapshot files (specifically, all `.tar` files) in the
 Home Assistant `/backup` directory to a specified path in your Dropbox. This

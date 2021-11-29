@@ -92,6 +92,17 @@ jobs:
       - name: 🚀 Run YAMLLint
         uses: frenck/action-yamllint@v1.1
 
+  lint-flake8:
+    name: Flake8
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v2.4.0
+      - name: 🏗 Set up Python environment
+        uses: actions/setup-python@v1
+      - name: 🚀 Run Flake8
+        uses: py-actions/flake8@v1
+
   build:
     name: Build ${{ matrix.architecture }}
     needs:

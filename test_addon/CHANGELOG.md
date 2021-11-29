@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Specify Python packages in `requirements.txt`.
 - Add Dependabot checks for Python requirements.
+- Add Flake8 linting.
 
 ## [0.4.3](https://github.com/mikevansighem/test_addon/releases/tag/0.4.3) - 2021-11-29
 
