@@ -1,6 +1,6 @@
 ---
-name: Test_addon
-version: "0.4.2"
+name: Dropbox backup
+version: "0.4.3"
 slug: test_addon
 description: "Upload your Home Assistant backups to Dropbox"
 url: https://github.com/mikevansighem/test_addon

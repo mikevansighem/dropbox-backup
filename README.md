@@ -102,8 +102,8 @@ This triggers the `dropbox_uploader.sh` script with the provided access token.
 You can use Home Assistant automations or scripts to run uploads at certain
 time intervals, under certain conditions, etc.
 
-A sample automation can be found [Here](DOCS/sample_automation.md). To use it
-Simply create a new automation and copy the YAML.
+A sample automation can be found [here](DOCS/sample_automation.md). To use it
+simply create a new automation and copy the YAML.
 
 Dropbox Sync will only upload new snapshots to the specified path, and will
 skip snapshots already in the target Dropbox path.

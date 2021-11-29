@@ -7,10 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [0.4.3](https://github.com/mikevansighem/test_addon/releases/tag/0.4.3) - 2021-11-29
+
 ### Changed
 
 - Renamed snapshots to backups in log messages.
 - Improved installation instructions.
+- Rename to Dropbox backup
 
 ## [0.4.2](https://github.com/mikevansighem/test_addon/releases/tag/0.4.2) - 2021-11-28
 
