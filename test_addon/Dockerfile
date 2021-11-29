@@ -6,9 +6,9 @@ FROM ${BUILD_FROM}
 ENV LANG C.UTF-8
 
 # Install dependancies
-RUN ls
+COPY requirements.txt /
 RUN apk add --no-cache findutils==4.8.0-r1 python3==3.9.5-r2 python3-dev==3.9.5-r2 py3-pip==20.3.4-r1 && \
-    pip3 install --no-cache-dir -r test_addon/requirements.txt
+    pip3 install --no-cache-dir -r requirements.txt
 
 # Build arguments
 ARG BUILD_ARCH
@@ -39,14 +39,17 @@ LABEL \
     org.opencontainers.image.revision=${BUILD_REF} \
     org.opencontainers.image.version=${BUILD_VERSION}
 
-# Copy data
-COPY run.sh /
+# Copy keep last
 COPY keep_last.py /
+
+# Copy run and allow to execute
+COPY run.sh /
 RUN ["chmod", "a+x", "/run.sh"]
 
-# Get the dropbox_uploader file from a specific commit.
+# Get the dropbox_uploader file from a specific commit and allow to execute.
 RUN curl "https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/4ccc5c10a7b0b7a41ab4faa52585f015ed2ae568/dropbox_uploader.sh" -o /dropbox_uploader.sh
 RUN ["chmod", "a+x", "/dropbox_uploader.sh"]
+
 WORKDIR /
 
 CMD [ "/run.sh" ]
