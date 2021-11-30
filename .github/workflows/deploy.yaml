@@ -160,8 +160,8 @@ jobs:
           docker push \
             "ghcr.io/mikevansighem/${{ needs.information.outputs.slug }}/${{ matrix.architecture }}:${{ needs.information.outputs.version }}"
 
-  publish-stable:
-    name: 📢 Publish to stable repository
+  publish:
+    name: 📢 Publish to repository
     # if: needs.information.outputs.environment == 'stable'
     needs:
       - information
