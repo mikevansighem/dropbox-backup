@@ -22,7 +22,7 @@ action:
   # Upload to Dropbox
   - service: hassio.addon_stdin
     data:
-      addon: 7be23ff5_dropbox_sync
+      addon: 782428ea_dropbox-backup
       input:
         command: upload
 

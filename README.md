@@ -64,9 +64,9 @@ the `oauth_access_token` label.
 |Parameter|Required|Description|
 |---------|--------|-----------|
 |`oauth_access_token`|Yes|The "app" access token you generated above via the Dropbox UI.|
-|`output`|Yes|The target directory in your Dropbox to which you want to upload. If left empty, defaults to `/`, which represents the top level of directory of your Dropbox.|
-|`keep_last`|Yes|If set, the number of snapshots to keep locally. If there are more than this number of snapshots stored locally, the older snapshots will be deleted from local storage after being uploaded to Dropbox. If not set, no snapshots are deleted from local storage.|
-|`filetypes`|Yes|File extensions of files to upload from `/share` directory, seperated by <code>&#124;</code> (ex: `"jpg|png" or "png"`).|
+|`output`|Yes|The target directory in Dropbox to which you want to upload. If left empty, defaults to `/`, which represents the top level of directory of your Dropbox.|
+|`keep_last`|No|If set, the number of backups to keep locally. If there are more than this number of backups stored locally, the older backups will be deleted from local storage after being uploaded to Dropbox. If not set, no backups are deleted from local storage.|
+|`filetypes`|No|File extensions of files to upload from `/share` directory, seperated by `<code>&#124;</code>` (ex: `"jpg|png"` or `"png"`).|
 
 Example configuration:
 
@@ -81,7 +81,7 @@ Example configuration:
 
 ## 🚀 Usage
 
-Dropbox Sync uploads all snapshot files (specifically, all `.tar` files) in the
+Dropbox Sync uploads all backup files (specifically, all `.tar` files) in the
 Home Assistant `/backup` directory to a specified path in your Dropbox. This
 target path is specified via the `output`option. Once the add-on is started, it
 is listening for service calls.
@@ -105,19 +105,6 @@ time intervals, under certain conditions, etc.
 A sample automation can be found [here](DOCS/sample_automation.md). To use it
 simply create a new automation and copy the YAML.
 
-Dropbox Sync will only upload new snapshots to the specified path, and will
-skip snapshots already in the target Dropbox path.
+## 📝 License
 
-The `keep last` option allows the add-on to clean up the local backup
-directory, deleting the local copies of the snapshots after they have been
-uploaded to Dropbox. If `keep_last` is set to some integer `x`, only the latest
-`x` snapshots will be stored locally; all other (older) snapshots will
-be deleted from local storage. All snapshots are always uploaded to Dropbox,
-regardless of this option.
-
-The `filetypes` option allows the add-on to upload arbitrary filetypes from the
-Hass.io `/share`directory to Dropbox. Set this option to a string of extensions
-seperated by `|` to upload matching files to Dropbox. For example, setting this
-option to `"jpg|png"` will upload all files in the `/share` folder ending in
-`.jpg` or `.png`. These files will be uploaded to the directory
-specified by the `output` option.
+This add-on is covered under the MIT license refer to [LICENSE.md](LICENSE.md) for details.
