@@ -1,11 +1,11 @@
 # Home Assistant add-on: Dropbox backup
 
-[![Last commit](https://img.shields.io/github/last-commit/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/commits/main)
-[![Commits per month](https://img.shields.io/github/commit-activity/m/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/commits/main)
-[![License](https://img.shields.io/github/license/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/blob/main/LICENSE)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mikevansighem/test_addon/CI?style=flat-square)](https://github.com/mikevansighem/test_addon/actions)
-[![GitHub issues](https://img.shields.io/github/issues-raw/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/issues)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/mikevansighem/test_addon?style=flat-square)](https://github.com/mikevansighem/test_addon/releases)
+[![Last commit](https://img.shields.io/github/last-commit/mikevansighem/dropbox-backup?style=flat-square)](https://github.com/mikevansighem/dropbox-backup/commits/main)
+[![Commits per month](https://img.shields.io/github/commit-activity/m/mikevansighem/dropbox-backup?style=flat-square)](https://github.com/mikevansighem/dropbox-backup/commits/main)
+[![License](https://img.shields.io/github/license/mikevansighem/dropbox-backup?style=flat-square)](https://github.com/mikevansighem/dropbox-backup/blob/main/LICENSE)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mikevansighem/dropbox-backup/CI?style=flat-square)](https://github.com/mikevansighem/dropbox-backup/actions)
+[![GitHub issues](https://img.shields.io/github/issues-raw/mikevansighem/dropbox-backup?style=flat-square)](https://github.com/mikevansighem/dropbox-backup/issues)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/mikevansighem/dropbox-backup?style=flat-square)](https://github.com/mikevansighem/dropbox-backup/releases)
 
 ![Supports armhf Architecture](https://img.shields.io/badge/armhf-yes-green?style=flat-square)
 ![Supports armv7 Architecture](https://img.shields.io/badge/armv7-yes-green?style=flat-square)
@@ -92,7 +92,7 @@ After the add-on is configured and started, trigger an upload by calling the
 ```yaml
 service: hassio.addon_stdin
 data:
-  addon: 0fdda7d5_test_addon
+  addon: 0fdda7d5_dropbox-backup
   input:
     command: upload
 
