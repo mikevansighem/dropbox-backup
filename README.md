@@ -35,11 +35,10 @@ configuration via the Home Assistant UI (see below for further details).
 ## ⤵️ Installation
 
 1. Go to the Supervisor add-on store in Home Assistant.
-2. Click on the "three-dots-menu" and choose `Repositories`.
-3. Add this repository to your Home Assistant instance: `https://github.com/mikevansighem/dropbox_sync`.
-4. Install the Dropbox backup add-on.
-5. Configure the add-on with your Dropbox OAuth Token and desired output
-directory (see configuration below).
+1. Click on the "three-dots-menu" and choose `Repositories`.
+1. Add this repository to your Home Assistant instance: `https://github.com/mikevansighem/dropbox_sync`.
+1. Install the Dropbox backup add-on.
+1. Configure the add-on with your Dropbox OAuth Token and desired output directory (see configuration below).
 
 ## 🏗 Configuration
 
@@ -49,12 +48,12 @@ To access your personal Dropbox, this add-on requires an access token.
 Follow these steps to create an access token:
 
 1. Go to [Your Dropbox apps](https://www.dropbox.com/developers/apps).
-2. Click on `Create App`.
-3. Select `Scoped Access` and choose between full or app folder only access.
-4. Give your app a unique name and click on `Create App`.
-6. Now your app is created go to the permissions tab and tick `files.metadata.write`.
-7. Back on the settings tab, go to "Generated access token" and click `Generate`.
-8. Copy the access code for use in your configuration.
+1. Click on `Create App`.
+1. Select `Scoped Access` and choose between full or app folder only access.
+1. Give your app a unique name and click on `Create App`.
+1. Now your app is created go to the permissions tab and tick `files.metadata.write`.
+1. Back on the settings tab, go to "Generated access token" and click `Generate`.
+1. Copy the access code for use in your configuration.
 
 ### Setup the add-on
 
