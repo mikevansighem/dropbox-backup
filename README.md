@@ -60,13 +60,16 @@ Follow these steps to create an access token:
 Once you have created the token, copy it into this add-on's configuration under
 the `oauth_access_token` label.
 
+<!-- markdownlint-disable MD033 -->
+
 |Parameter|Required|Description|
 |---------|--------|-----------|
 |`oauth_access_token`|Yes|The "app" access token you generated above via the Dropbox UI.|
 |`output`|Yes|The target directory in Dropbox to which you want to upload. If left empty, defaults to `/`, which represents the top level of directory of your Dropbox.|
 |`keep_last`|No|If set, the number of backups to keep locally. If there are more than this number of backups stored locally, the older backups will be deleted from local storage after being uploaded to Dropbox. If not set, no backups are deleted from local storage.|
-<!-- markdownlint-disable-next-line MD033 -->
 |`filetypes`|No|File extensions of files to upload from `/share` directory, seperated by <code>&#124;</code> (eg: <code>"jpg&#124;png"</code> or `"png"`).|
+
+<!-- markdownlint-enable MD033 -->
 
 Example configuration:
 
