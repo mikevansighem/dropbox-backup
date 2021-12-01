@@ -1,1 +1,4 @@
-rules "~MD024"
+{
+  "default": true,
+  "MD013": { "line_length ": "88" },
+}
