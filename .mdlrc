@@ -1,4 +1,6 @@
 {
   "default": true,
-  "MD013": { "line_length ": "88" },
+  "MD013": { "line_length ": "100" },
+  "MD024": false,
+  "MD033": false,
 }

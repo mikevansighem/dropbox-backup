@@ -110,4 +110,5 @@ simply create a new automation and copy the YAML.
 
 ## 📝 License
 
-This add-on is covered under the MIT license refer to [LICENSE.md](LICENSE.md) for details.
+This add-on is covered under the MIT license refer to [LICENSE.md](LICENSE.md)
+for details.
