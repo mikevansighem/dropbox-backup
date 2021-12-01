@@ -1,8 +1,12 @@
-default: true
+{
+  "default": true,
 
-MD024: false
-MD033: false
-MD013:
-  line_length: 100
-  tables: false
-  headers: false
+  "MD013": {
+    "line_length ": "100"
+    "tables": false
+    "headers": false
+  },
+
+  "MD024": false,
+  "MD033": false,
+}
