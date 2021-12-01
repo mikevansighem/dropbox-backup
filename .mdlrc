@@ -2,9 +2,9 @@
   "default": true,
 
   "MD013": {
-    "line_length ": "100"
-    "tables": false
-    "headers": false
+    "line_length ": "100",
+    "tables": false,
+    "headers": false,
   },
 
   "MD024": false,
