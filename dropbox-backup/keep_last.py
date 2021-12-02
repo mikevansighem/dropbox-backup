@@ -8,8 +8,8 @@ import pytz
 BASE_URL = "http://hassio/"
 HEADERS = {"X-HASSIO-KEY": os.environ.get("HASSIO_TOKEN")}
 
+# Convert dates in the list of backups to UTC.
 def dates_to_utc(backups):
-    """ Convert dates in the list of backups to UTC. """
 
     for backup in backups:
         d = parse(backup["date"])

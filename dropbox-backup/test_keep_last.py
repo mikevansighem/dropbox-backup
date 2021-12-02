@@ -13,17 +13,15 @@ dummy_backups_all_utc = [
 
     ]
 
+# Test dates_to_utc from keep_last
 class TestDatesToUtc:
-    """ Test dates_to_utc from keep_last """
 
     def test_for_no_change(self):
         assert dates_to_utc(dummy_backups_all_utc) == dummy_backups_all_utc
 
-
     def test_list_type(self):
         result = dates_to_utc(dummy_backups_all_utc)
         assert isinstance(result, list)
-
 
     def test_dict_type(self):
         result = dates_to_utc(dummy_backups_all_utc)
