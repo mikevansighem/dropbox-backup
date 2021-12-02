@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [0.4.5](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.4.5) - 2021-12-02
+
+### Changed
+
+- Refactor Python code.
+- Add code testing.
+
 ## [0.4.4](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.4.4) - 2021-11-30
 
 ### Changed
