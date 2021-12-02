@@ -1,0 +1,4 @@
+# Python packages required for testing
+
+pytest==6.2.5
+pytest-cov==3.0.0
