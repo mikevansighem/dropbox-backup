@@ -105,6 +105,7 @@ jobs:
 
   pytest:
     name: Pytest
+    needs: lint-flake8
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
@@ -116,6 +117,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r ./dropbox-backup/requirements.txt
           pip install -r ./dropbox-backup/test_requirements.txt
+          pip install -e .
       - name: 🚀 Run Pytest
         run: python -m pytest -v
 
@@ -128,7 +130,8 @@ jobs:
       # - lint-markdown
       - lint-shellcheck
       - lint-yamllint
-      - lint-flake8
+      - Pytest
+
     runs-on: ubuntu-latest
     strategy:
       matrix:
