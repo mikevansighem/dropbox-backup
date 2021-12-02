@@ -118,7 +118,7 @@ jobs:
           pip install -r ./dropbox-backup/requirements.txt
           pip install -r ./dropbox-backup/test_requirements.txt
       - name: 🚀 Run Pytest
-        run: python -m pytest -v
+        run: py.test -v --cov
 
   build:
     name: Build ${{ matrix.architecture }}
