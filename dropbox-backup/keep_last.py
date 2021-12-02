@@ -20,6 +20,7 @@ def dates_to_utc(backups):
 
     return (backups)
 
+
 def main(number_to_keep):
 
     # Get backup name and information as a list of dicts
@@ -48,6 +49,7 @@ def main(number_to_keep):
             # log an error
             print("[Error] Failed to delete backup {}: {}".format(
                 backup["slug"], res.status_code))
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Remove old hassio backups.")
