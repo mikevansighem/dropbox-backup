@@ -13,7 +13,9 @@ def dates_to_utc(backups):
 
     for backup in backups:
         d = parse(backup["date"])
+
         if d.tzinfo is None or d.tzinfo.utcoffset(d) is None:
+
             print("Naive DateTime found for backup {}, setting to UTC...".
                   format(backup["slug"]))
             backup["date"] = d.replace(tzinfo=pytz.utc).isoformat()
