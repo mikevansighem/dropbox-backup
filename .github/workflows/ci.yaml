@@ -103,6 +103,20 @@ jobs:
       - name: 🚀 Run Flake8
         uses: py-actions/flake8@v1
 
+  pytest:
+    name: Pytest
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v2.4.0
+      - name: 🏗 Set up Python environment
+        uses: actions/setup-python@v1
+      - name: 🚀 Run Pytest
+        uses: fylein/python-pytest-github-action@v1
+        with:
+          args: pip3 install -r ./dropbox-backup/requirements.txt && pytest
+
+
   build:
     name: Build ${{ matrix.architecture }}
     needs:

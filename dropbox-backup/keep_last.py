@@ -9,6 +9,7 @@ BASE_URL = "http://hassio/"
 HEADERS = {"X-HASSIO-KEY": os.environ.get("HASSIO_TOKEN")}
 
 def dates_to_utc(backups):
+    """ Convert dates in the list of backups to UTC. """
 
     for backup in backups:
         d = parse(backup["date"])
@@ -47,7 +48,6 @@ def main(number_to_keep):
             # log an error
             print("[Error] Failed to delete backup {}: {}".format(
                 backup["slug"], res.status_code))
-
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Remove old hassio backups.")
