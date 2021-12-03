@@ -44,6 +44,7 @@ dummy_stale = [
         }
     ]
 
+
 # Test dates_to_utc from keep_last
 class TestDatesToUtc:
 
@@ -58,6 +59,7 @@ class TestDatesToUtc:
     def test_fix_naive(self):
         result = dates_to_utc(dummy_backups_naive_non_sorted)
         assert result[0]['date'] == '2021-12-02T18:24:31.573701+00:00'
+
 
 # Test stale_only from keep_last
 class TestStaleOnly:
