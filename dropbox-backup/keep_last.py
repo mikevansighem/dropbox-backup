@@ -9,7 +9,7 @@ BASE_URL = "http://hassio/"
 HEADERS = {"X-HASSIO-KEY": os.environ.get("HASSIO_TOKEN")}
 
 
-# Convert dates in the list of backups to UTC.
+# If a naive (not timezone aware) datetime is found set it to UTC
 def dates_to_utc(backups):
 
     for backup in backups:
@@ -17,11 +17,21 @@ def dates_to_utc(backups):
 
         if d.tzinfo is None or d.tzinfo.utcoffset(d) is None:
 
-            print("Naive DateTime found for backup {}, setting to UTC...".
+            print("[INFO] Naive DateTime found for backup {}, setting to UTC...".
                   format(backup["name"]))
             backup["date"] = d.replace(tzinfo=pytz.utc).isoformat()
 
     return (backups)
+
+
+# Return stale backups
+def stale_only(backups, number_to_keep):
+
+    backups.sort(key=lambda item: parse(item["date"]), reverse=True)
+    keepers = backups[:number_to_keep]
+    stale_backups = [snap for snap in backups if snap not in keepers]
+
+    return stale_backups
 
 
 def main(number_to_keep):
@@ -35,9 +45,7 @@ def main(number_to_keep):
     backups = dates_to_utc(backups)
 
     # Sort by date and make list of backups to delete
-    backups.sort(key=lambda item: parse(item["date"]), reverse=True)
-    keepers = backups[:number_to_keep]
-    stale_backups = [snap for snap in backups if snap not in keepers]
+    stale_backups = stale_only(backups, number_to_keep)
 
     # Delete all stale backups
     for backup in stale_backups:
