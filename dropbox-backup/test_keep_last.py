@@ -7,16 +7,15 @@ dummy_backups_non_naive_non_sorted = [
         'slug': 'd6f0919b',
         'name': 'Automated Backup 2021-12-02',
         'date': '2021-12-02T18:24:31.573701+00:00'
-        }, {
+    }, {
         'slug': '599e3f01',
         'name': 'Automated Backup 2020-01-23',
         'date': '2020-01-23T00:00:00.093490+00:00'
-        }, {
+    }, {
         'slug': '599e3f01',
         'name': 'Automated Backup 2020-03-05',
         'date': '2020-03-05T00:00:00.073490+00:00'
-        }
-    ]
+    }]
 
 # A dummy backup list of dicts with naive dates.
 dummy_backups_naive_non_sorted = [
@@ -24,16 +23,15 @@ dummy_backups_naive_non_sorted = [
         'slug': 'd6f0919b',
         'name': 'Automated Backup 2021-12-02',
         'date': '2021-12-02T18:24:31.573701'
-        }, {
+    }, {
         'slug': '599e3f01',
         'name': 'Automated Backup 2020-01-23',
         'date': '2020-01-23T00:00:00.093490+00:00'
-        }, {
+    }, {
         'slug': '599e3f01',
         'name': 'Automated Backup 2020-03-05',
         'date': '2020-03-05T00:00:00.073490'
-        }
-    ]
+    }]
 
 # A dummy backup list of dicts with stale backup only
 dummy_stale = [
@@ -41,8 +39,7 @@ dummy_stale = [
         'slug': '599e3f01',
         'name': 'Automated Backup 2020-01-23',
         'date': '2020-01-23T00:00:00.093490+00:00'
-        }
-    ]
+    }]
 
 
 # Test dates_to_utc from keep_last
