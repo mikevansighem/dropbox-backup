@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 
+## [0.4.6](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.4.6) - 2021-12-03
+
+### Changed
+
+- Fix bug where old backups are not deleted.
+- Show backup names instead of slugs.
+
 ## [0.4.5](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.4.5) - 2021-12-02
 
 ### Changed

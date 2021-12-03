@@ -18,7 +18,7 @@ def dates_to_utc(backups):
         if d.tzinfo is None or d.tzinfo.utcoffset(d) is None:
 
             print("Naive DateTime found for backup {}, setting to UTC...".
-                  format(backup["slug"]))
+                  format(backup["name"]))
             backup["date"] = d.replace(tzinfo=pytz.utc).isoformat()
 
     return (backups)
@@ -43,15 +43,15 @@ def main(number_to_keep):
     for backup in stale_backups:
         # call hassio API deletion
         res = requests.post(
-            BASE_URL + "backups/" + backup["slug"] + "/remove",
+            BASE_URL + "snapshots/" + backup["slug"] + "/remove",
             headers=HEADERS)
         if res.ok:
-            print("[Info] Deleted backup {}".format(backup["slug"]))
+            print("[Info] Deleted backup {}".format(backup["name"]))
             continue
         else:
             # log an error
             print("[Error] Failed to delete backup {}: {}".format(
-                backup["slug"], res.status_code))
+                backup["name"], res.status_code))
 
 
 if __name__ == "__main__":
