@@ -120,6 +120,15 @@ jobs:
       - name: 🚀 Run Pytest
         run: python -m pytest -v --cov
 
+  md-link-check:
+    name: Markdown link check
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v2.4.0
+      - name: 🚀 Run Markdown link check
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+
   build:
     name: Build ${{ matrix.architecture }}
     needs:

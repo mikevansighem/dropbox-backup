@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Removed background from the addon icon.
+- Fix dead links.
+- Updated license.
 
 ## [0.4.6](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.4.6) - 2021-12-03
 
@@ -123,9 +125,3 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Fix package version.
-
-## [0.3.0](https://github.com/mikevansighem/dropbox-backup/releases/tag/v0.3.0) - 2021-11-26
-
-### Changed
-
-- Update maintainer information.
