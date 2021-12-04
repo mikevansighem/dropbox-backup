@@ -19,3 +19,9 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Refrences
+
+Original work on [Hassio Dropbox sync](https://github.com/danielwelch/hassio-dropbox-sync) copyright (c) 2018 Daniel Welch covered under [Apache License 2.0](https://github.com/danielwelch/hassio-dropbox-sync/blob/master/LICENSE).
+
+CI pipeline based on [Addon-example](https://github.com/hassio-addons/addon-example) Copyright (c) 2017-2021 Franck Nijhof covered under [MIT License](https://github.com/hassio-addons/addon-example/blob/main/LICENSE.md).
