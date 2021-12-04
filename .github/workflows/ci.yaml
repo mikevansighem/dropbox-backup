@@ -103,22 +103,22 @@ jobs:
       - name: 🚀 Run Flake8
         uses: py-actions/flake8@v1
 
-  # pytest:
-  #  name: Pytest
-  #  needs: lint-flake8
-  #  runs-on: ubuntu-latest
-  #  steps:
-  #    - name: ⤵️ Check out code from GitHub
-  #      uses: actions/checkout@v2.4.0
-  #    - name: 🏗 Set up Python environment
-  #      uses: actions/setup-python@v1
-  #    - name: 🏗 Install dependencies
-  #      run: |
-  #        python -m pip install --upgrade pip
-  #        pip install -r ./dropbox-backup/requirements.txt
-  #        pip install -r ./dropbox-backup/requirements_test.txt
-  #    - name: 🚀 Run Pytest
-  #      run: py.test -v --cov
+  pytest:
+    name: Pytest
+    needs: lint-flake8
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v2.4.0
+      - name: 🏗 Set up Python environment
+        uses: actions/setup-python@v2
+      - name: 🏗 Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r ./dropbox_backup/requirements.txt
+          pip install -r ./TESTS/test_requirements.txt
+      - name: 🚀 Run Pytest
+        run: python -m pytest -v --cov
 
   build:
     name: Build ${{ matrix.architecture }}
@@ -130,7 +130,7 @@ jobs:
       - lint-shellcheck
       - lint-yamllint
       - lint-flake8
-      # - Pytest
+      - Pytest
 
     runs-on: ubuntu-latest
     strategy:

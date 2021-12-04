@@ -1,5 +1,5 @@
-from keep_last import dates_to_utc
-from keep_last import stale_only
+from dropbox_backup.keep_last import dates_to_utc
+from dropbox_backup.keep_last import stale_only
 
 # A dummy backup list of dicts.
 dummy_backups_non_naive_non_sorted = [
