@@ -63,17 +63,17 @@ jobs:
           shopt -s globstar
           cat **/*.json | jq '.'
 
-  lint-addon:
-    name: Add-on configuration
-    runs-on: ubuntu-latest
-    steps:
-      - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v2
-      - name: 🚀 Run Home Assistant Add-on Lint
-        uses: frenck/action-addon-linter@v1
-        with:
-          path: "./dropbox_backup"
-          community: false
+  # lint-addon:
+  #  name: Add-on lint
+  #  runs-on: ubuntu-latest
+  #  steps:
+  #    - name: ⤵️ Check out code from GitHub
+  #      uses: actions/checkout@v2
+  #    - name: 🚀 Run Home Assistant Add-on Lint
+  #      uses: frenck/action-addon-linter@v1
+  #      with:
+  #        path: "./dropbox_backup"
+  #        community: false
 
   # lint-markdown:
   #  name: MarkdownLint
@@ -147,7 +147,7 @@ jobs:
       - information
       - lint-hadolint
       - lint-json
-      - lint-addon
+      # - lint-addon
       # - lint-markdown
       - lint-shellcheck
       - lint-yamllint
