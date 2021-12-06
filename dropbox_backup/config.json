@@ -12,11 +12,9 @@
     "armv7",
     "i386"
   ],
-  "startup": "application",
   "stdin": true,
   "hassio_api": true,
   "hassio_role": "manager",
-  "boot": "auto",
   "map": [
     "backup",
     "share"
