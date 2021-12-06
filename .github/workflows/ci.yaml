@@ -146,6 +146,7 @@ jobs:
   build:
     name: Build ${{ matrix.architecture }}
     needs:
+      - information
       - lint-hadolint
       - lint-markdown
       - lint-json
