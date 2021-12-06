@@ -53,7 +53,7 @@ jobs:
           config: ".hadolint"
 
   lint-markdown:
-    name: MarkdownLint
+    name: Markdown lint
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
@@ -73,7 +73,7 @@ jobs:
           SHELLCHECK_OPTS: -s bash
 
   lint-yamllint:
-    name: YAMLLint
+    name: YAML lint
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
