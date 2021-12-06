@@ -61,7 +61,7 @@ jobs:
       - name: 🚀 Run mdl
         uses: actionshub/markdownlint@main
         with:
-          verbose: true
+          args: -v
 
   lint-shellcheck:
     name: Shellcheck
