@@ -52,37 +52,16 @@ jobs:
           dockerfile: "./${{ needs.information.outputs.target }}/Dockerfile"
           config: ".hadolint"
 
-  lint-json:
-    name: JSON Lint
+  lint-markdown:
+    name: Markdown lint
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v2.4.0
-      - name: 🚀 Run JQ
-        run: |
-          shopt -s globstar
-          cat **/*.json | jq '.'
-
-  # lint-addon:
-  #  name: Add-on lint
-  #  runs-on: ubuntu-latest
-  #  steps:
-  #    - name: ⤵️ Check out code from GitHub
-  #      uses: actions/checkout@v2
-  #    - name: 🚀 Run Home Assistant Add-on Lint
-  #      uses: frenck/action-addon-linter@v1
-  #      with:
-  #        path: "./dropbox_backup"
-  #        community: false
-
-  # lint-markdown:
-  #  name: MarkdownLint
-  #  runs-on: ubuntu-latest
-  #  steps:
-  #    - name: ⤵️ Check out code from GitHub
-  #      uses: actions/checkout@v2.4.0
-  #    - name: 🚀 Run mdl
-  #      uses: actionshub/markdownlint@2.0.2
+      - name: 🚀 Run mdl
+        uses: actionshub/markdownlint@main
+        with:
+          args: -v
 
   lint-shellcheck:
     name: Shellcheck
@@ -96,7 +75,7 @@ jobs:
           SHELLCHECK_OPTS: -s bash
 
   lint-yamllint:
-    name: YAMLLint
+    name: YAML lint
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
@@ -117,7 +96,6 @@ jobs:
 
   pytest:
     name: Pytest
-    needs: lint-flake8
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
@@ -141,18 +119,42 @@ jobs:
       - name: 🚀 Run Markdown link check
         uses: gaurav-nelson/github-action-markdown-link-check@v1
 
+  lint-json:
+    name: JSON Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v2.4.0
+      - name: 🚀 Run JQ
+        run: |
+          shopt -s globstar
+          cat **/*.json | jq '.'
+
+  lint-addon:
+    name: Add-on lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⤵️ Check out code from GitHub
+        uses: actions/checkout@v2
+      - name: 🚀 Run Home Assistant Add-on Lint
+        uses: frenck/action-addon-linter@v1
+        with:
+          path: "./dropbox_backup"
+          community: false
+
   build:
     name: Build ${{ matrix.architecture }}
     needs:
       - information
       - lint-hadolint
+      - lint-flake8
+      - lint-markdown
       - lint-json
-      # - lint-addon
-      # - lint-markdown
+      - lint-addon
       - lint-shellcheck
       - lint-yamllint
-      - lint-flake8
-      - Pytest
+      - pytest
+      - md-link-check
 
     runs-on: ubuntu-latest
     strategy:

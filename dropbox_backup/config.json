@@ -1,0 +1,33 @@
+{
+  "name": "Dropbox backup",
+  "version": "0.4.6",
+  "slug": "dropbox-backup",
+  "description": "Upload your Home Assistant backups to Dropbox",
+  "url": "https://github.com/mikevansighem/dropbox-backup",
+  "init": false,
+  "arch": [
+    "aarch64",
+    "amd64",
+    "armhf",
+    "armv7",
+    "i386"
+  ],
+  "stdin": true,
+  "hassio_api": true,
+  "hassio_role": "manager",
+  "map": [
+    "backup",
+    "share"
+  ],
+  "options": {
+    "oauth_access_token": "<YOUR_ACCESS_TOKEN>",
+    "output": "/backup/"
+  },
+  "schema": {
+    "oauth_access_token": "str",
+    "output": "str",
+    "keep_last": "int(0,)?",
+    "filetypes": "str?"
+  },
+  "image": "ghcr.io/mikevansighem/dropbox-backup/{arch}"
+}
