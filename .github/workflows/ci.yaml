@@ -113,7 +113,6 @@ jobs:
 
   md-link-check:
     name: Markdown link check
-    needs: lint-markdown
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
@@ -148,12 +147,13 @@ jobs:
     name: Build ${{ matrix.architecture }}
     needs:
       - lint-hadolint
-      - Pytest
-      - md-link-check
+      - lint-markdown
       - lint-json
       - lint-addon
       - lint-shellcheck
       - lint-yamllint
+      - pytest
+      - md-link-check
 
     runs-on: ubuntu-latest
     strategy:
