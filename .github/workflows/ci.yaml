@@ -145,14 +145,13 @@ jobs:
   build:
     name: Build ${{ matrix.architecture }}
     needs:
-      - information
       - lint-hadolint
+      - Pytest
+      - md-link-check
       - lint-json
       - lint-addon
       - lint-shellcheck
       - lint-yamllint
-      - md-link-check
-      - Pytest
 
     runs-on: ubuntu-latest
     strategy:
