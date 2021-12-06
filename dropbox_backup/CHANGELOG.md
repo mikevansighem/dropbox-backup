@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Fix dead links.
 - Updated license.
 - Enable addon linter.
+- Enable markdown linter.
 
 <!-- markdown-link-check-disable-next-line -->
 ## [0.4.6](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.4.6) - 2021-12-03
