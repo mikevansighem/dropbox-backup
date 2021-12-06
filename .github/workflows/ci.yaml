@@ -134,6 +134,7 @@ jobs:
 
   md-link-check:
     name: Markdown link check
+    needs: lint-markdown
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
@@ -148,10 +149,9 @@ jobs:
       - lint-hadolint
       - lint-json
       - lint-addon
-      # - lint-markdown
       - lint-shellcheck
       - lint-yamllint
-      - lint-flake8
+      - md-link-check
       - Pytest
 
     runs-on: ubuntu-latest
