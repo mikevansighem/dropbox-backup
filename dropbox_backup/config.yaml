@@ -6,19 +6,19 @@ description: "Upload your Home Assistant backups to Dropbox"
 url: https://github.com/mikevansighem/dropbox-backup
 init: false
 arch:
-- aarch64
-- amd64
-- armhf
-- armv7
-- i386
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
 
 stdin: true
 hassio_api: true
 hassio_role: manager
 
 map:
-- backup
-- share
+  - backup
+  - share
 
 # Fields available in configuration tab with default values.
 options:
