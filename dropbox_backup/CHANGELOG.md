@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- markdown-link-check-disable -->
 
-## [0.4.7](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.4.7) - 2021-12-08
+## [0.4.8](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.4.8) - 2021-12-08
 
 <!-- markdown-link-check-enable -->
+
+### Changed
+
+- Updated icon.
+
+## [0.4.7](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.4.7) - 2021-12-08
 
 ### Changed
 
