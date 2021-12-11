@@ -1,13 +1,11 @@
 import mock
 
-from unittest import TestCase
 from unittest.mock import patch
 
 from dropbox_backup.keep_last import dates_to_utc
 from dropbox_backup.keep_last import stale_only
 from dropbox_backup.keep_last import delete_backup
 from dropbox_backup.keep_last import get_headers
-from dropbox_backup.keep_last import main
 
 dummy_token = "sdfnkjdsgn832734tber78sf7wgef73gfcysa8ou74he7a8oher8af7fp8j34"
 dummy_header = {"X-HASSIO-KEY": dummy_token}
@@ -106,4 +104,4 @@ class TestDeleteBackup:
             mock.call().ok.__bool__(),
             mock.call('http://hassio/snapshots/59gr6f01/remove', headers=dummy_header),
             mock.call().ok.__bool__()
-            ])
+        ])

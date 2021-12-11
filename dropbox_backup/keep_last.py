@@ -43,7 +43,7 @@ def delete_backup(stale_backups, headers):
 
     for backup in stale_backups:
 
-sests.post(
+        sests.post(
             BASE_URL + "snapshots/" + backup["slug"] + "/remove",
             headers=headers)
 
