@@ -7,6 +7,7 @@ import dropbox
 from dropbox.files import WriteMode
 from dropbox.exceptions import ApiError, AuthError
 
+
 # Uploads a file to Dropbox
 def upload_file(dbx, file, target):
     with open(file, 'rb') as f:
@@ -16,8 +17,7 @@ def upload_file(dbx, file, target):
         except ApiError as err:
             # This checks for the specific error where a user doesn't have
             # enough Dropbox space quota to upload this file
-            if (err.error.is_path() and
-                    err.error.get_path().reason.is_insufficient_space()):
+            if (err.error.is_path() and err.error.get_path().reason.is_insufficient_space()):
                 sys.exit("[ERROR] Cannot back up; insufficient space.")
             elif err.user_message_text:
                 print(err.user_message_text)
@@ -25,6 +25,7 @@ def upload_file(dbx, file, target):
             else:
                 print(err)
                 sys.exit()
+
 
 # Uploads all files to the root folder
 def upload_files(dbx, files, output_dir):
@@ -63,7 +64,6 @@ def main(token, output_dir):
 
     print("[INFO] Found", len(file_list), "file(s) to upload.")
 
-
     # Create an instance of a Dropbox class, which can make requests to the API.
     print("[INFO] Creating a Dropbox object...")
     with dropbox.Dropbox(token) as dbx:
@@ -72,8 +72,7 @@ def main(token, output_dir):
         try:
             dbx.users_get_current_account()
         except AuthError:
-            sys.exit("[ERROR] Invalid access token; try re-generating an "
-                "access token from the app console on the web.")
+            sys.exit("[ERROR] Invalid access token; try re-generating an access token from the app console on the web.")
         # Correct the output directory path.
         output_dir = parse_dir(output_dir)
 
