@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Added a logo.
+- Use Dropbox Python SDK directly.
 
 <!-- markdown-link-check-disable -->
 
