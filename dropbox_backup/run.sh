@@ -8,12 +8,20 @@ TOKEN=$(jq --raw-output ".oauth_access_token" $CONFIG_PATH)
 # Configuration
 OUTPUT_DIR=$(jq --raw-output ".output // empty" $CONFIG_PATH)
 KEEP_LAST=$(jq --raw-output ".keep_last // empty" $CONFIG_PATH)
+PRESERVE_FILENAME=$(jq --raw-output ".preserve_filename // empty" $CONFIG_PATH)
 
+# Check if empty otherwise set default
 if [[ -z "$OUTPUT_DIR" ]]; then
     OUTPUT_DIR="/"
 fi
 
+# Check if empty otherwise set default
+if [[ -z "$PRESERVE_FILENAME" ]]; then
+    PRESERVE_FILENAME=false
+fi
+
 echo "[Info] Files will be uploaded to: ${OUTPUT_DIR}"
+echo "[Info] Preserve filenames set to: ${PRESERVE_FILENAME}"
 echo "[Info] Listening for messages via stdin service call..."
 
 # listen for input

@@ -6,7 +6,7 @@ configuration:
     description: The "app" access token you generate via the Dropbox UI.
 
   output:
-    name: Output
+    name: Output directory
     description: >-
       The target directory in your Dropbox to which you want to upload.
 
@@ -14,6 +14,6 @@ configuration:
     name: Keep last
     description: The number of backups to keep locally.
 
-  filetypes:
-    name: Filetypes
-    description: File extensions of files to upload.
+  preserve_filename:
+    name: Preserve filename.
+    description: Preserve original backup filename.

@@ -22,14 +22,13 @@ map:
 
 # Fields available in configuration tab with default values.
 options:
-  oauth_access_token: "<YOUR_ACCESS_TOKEN>"
-  output: "/backup/"
+  oauth_access_token: null
 
 schema:
   oauth_access_token: str
-  output: str
+  output: str?
   keep_last: int(0,)?
-  filetypes: str?
+  preserve_filename: bool?
 
 # Download location of the package.
 image: "ghcr.io/mikevansighem/dropbox-backup/{arch}"
