@@ -1,5 +1,8 @@
-*.pytest_cache*
-*__pycache__*
 *pyc
 *.pyc
 .coverage
+
+# Folders to ignore
+dev/
+*.pytest_cache*
+*__pycache__*

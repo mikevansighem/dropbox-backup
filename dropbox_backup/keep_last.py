@@ -6,7 +6,11 @@ from dateutil.parser import parse
 import pytz
 
 BASE_URL = "http://hassio/"
-HEADERS = {"X-HASSIO-KEY": os.environ.get("HASSIO_TOKEN")}
+
+
+# Get the hassio token for authentication.
+def get_headers():
+    return {"X-HASSIO-KEY": os.environ.get("HASSIO_TOKEN")}
 
 
 # If a naive (not timezone aware) datetime is found set it to UTC
@@ -34,10 +38,33 @@ def stale_only(backups, number_to_keep):
     return stale_backups
 
 
+# Delete backups
+def delete_backup(stale_backups, headers):
+
+    for backup in stale_backups:
+
+        # call hassio API deletion
+        res = requests.post(
+            BASE_URL + "snapshots/" + backup["slug"] + "/remove",
+            headers=headers)
+
+        # Print message based on response.
+        if res.ok:
+            print("[Info] Deleted backup {}".format(backup["name"]))
+            continue
+
+        else:
+            # log an error
+            print("[Error] Failed to delete backup {}: {}".format(
+                backup["name"], res.status_code))
+
+
 def main(number_to_keep):
 
-    # Get backup name and information as a list of dicts
-    backup_info = requests.get(BASE_URL + "backups", headers=HEADERS)
+    my_headers = get_headers()
+
+    # Get backup name and information as a list of dicts.
+    backup_info = requests.get(BASE_URL + "backups", headers=my_headers)
     backup_info.raise_for_status()
     backups = backup_info.json()["data"]["backups"]
 
@@ -48,18 +75,7 @@ def main(number_to_keep):
     stale_backups = stale_only(backups, number_to_keep)
 
     # Delete all stale backups
-    for backup in stale_backups:
-        # call hassio API deletion
-        res = requests.post(
-            BASE_URL + "snapshots/" + backup["slug"] + "/remove",
-            headers=HEADERS)
-        if res.ok:
-            print("[Info] Deleted backup {}".format(backup["name"]))
-            continue
-        else:
-            # log an error
-            print("[Error] Failed to delete backup {}: {}".format(
-                backup["name"], res.status_code))
+    delete_backup(stale_backups, my_headers)
 
 
 if __name__ == "__main__":
