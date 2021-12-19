@@ -42,13 +42,12 @@ RUN apk add --no-cache findutils==4.8.0-r1 python3==3.9.5-r2 python3-dev==3.9.5-
 # Copy keep last
 COPY keep_last.py /
 
+# Copy keep last
+COPY upload.py /
+
 # Copy run and allow to execute
 COPY run.sh /
 RUN ["chmod", "a+x", "/run.sh"]
-
-# Get the dropbox_uploader file from a specific commit and allow to execute.
-RUN curl "https://raw.githubusercontent.com/andreafabrizi/Dropbox-Uploader/4ccc5c10a7b0b7a41ab4faa52585f015ed2ae568/dropbox_uploader.sh" -o /dropbox_uploader.sh
-RUN ["chmod", "a+x", "/dropbox_uploader.sh"]
 
 WORKDIR /
 
