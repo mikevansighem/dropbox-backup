@@ -23,14 +23,8 @@ are triggered via a service call, making it easy to automate periodic backups
 or trigger uploads to Dropbox via script as you would with any other Home
 Assistant service.
 
-This add-on is heavily based on [Dropbox Sync](https://github.com/danielwelch/hassio-dropbox-sync)
-from [Daniel Welch](https://github.com/danielwelch). Major thanks for his
-initial work!
-
-The add-on uses the [Dropbox-Uploader](https://github.com/andreafabrizi/Dropbox-Uploader)
-bash script to upload files to Dropbox. It requires that you generate an access
-token via the Dropbox Web UI, which must be added to this add-on's
-configuration via the Home Assistant UI (see below for further details).
+This add-on is inspired by [Dropbox Sync](https://github.com/danielwelch/hassio-dropbox-sync)
+from [Daniel Welch](https://github.com/danielwelch). Major thanks for his work!
 
 ## ⤵️ Installation
 
@@ -60,16 +54,12 @@ Follow these steps to create an access token:
 Once you have created the token, copy it into this add-on's configuration under
 the `oauth_access_token` label.
 
-<!-- markdownlint-disable MD033 -->
-
 |Parameter|Required|Description|
 |---------|--------|-----------|
 |`oauth_access_token`|Yes|The "app" access token you generated above via the Dropbox UI.|
-|`output`|Yes|The target directory in Dropbox to which you want to upload. If left empty, defaults to `/`, which represents the top level of directory of your Dropbox.|
+|`output`|No|The target directory in Dropbox to which you want to upload. If left empty, defaults to `/`, which represents the top level of directory of your Dropbox.|
 |`keep_last`|No|If set, the number of backups to keep locally. If there are more than this number of backups stored locally, the older backups will be deleted from local storage after being uploaded to Dropbox. If not set, no backups are deleted from local storage.|
-|`filetypes`|No|File extensions of files to upload from `/share` directory, seperated by <code>&#124;</code> (eg: <code>"jpg&#124;png"</code> or `"png"`).|
-
-<!-- markdownlint-enable MD033 -->
+|`preserve filename`|No|If set to `true` the backup filename will remain the original slug e.g. `d6f0919b.tar` otherwise the files will be renamed to the backup name e.g. `My Backup 2020-01-23.tar`.|
 
 Example configuration:
 
@@ -78,7 +68,7 @@ Example configuration:
   oauth_access_token: "<YOUR_TOKEN>"
   output: "/hasssio-backups/"
   keep_last: 2
-  filetypes: "tag|zip"
+  preserve_filename: false
 }
 ```
 
