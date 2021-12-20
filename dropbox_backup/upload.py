@@ -6,14 +6,55 @@ import os
 import dropbox
 from dropbox.files import WriteMode
 from dropbox.exceptions import ApiError, AuthError
+from tqdm import tqdm
+
+TIMEOUT = 900
+CHUNK_SIZE = 4 * 1024 * 1024
 
 
 # Uploads a file to Dropbox
 def upload_file(dbx, file, target):
+
+    # Open the file
     with open(file, 'rb') as f:
-        print("[INFO] Uploading " + file + " to Dropbox as " + target + "...")
+
         try:
-            dbx.files_upload(f.read(), target, mode=WriteMode('add'))
+            print("[INFO] Uploading " + file + " to Dropbox as " + target + "...")
+
+            # Get file size
+            file_size = os.path.getsize(file)
+
+            # Use normal upload method if file is small.
+            if file_size <= CHUNK_SIZE:
+
+                print("[DEBUG] Using simple uploader.")
+
+                # Use normal upload method if file is small.
+                dbx.files_upload(f.read(), target, mode=WriteMode('add'))
+
+            else:
+
+                print("[DEBUG] Using upload session.")
+
+                # Use upload session for large files.
+                with tqdm(total=file_size, desc="Uploaded") as pbar:
+
+                    upload_session_start_result = dbx.files_upload_session_start(f.read(CHUNK_SIZE))
+                    pbar.update(CHUNK_SIZE)
+                    cursor = dropbox.files.UploadSessionCursor(session_id=upload_session_start_result.session_id, offset=f.tell())
+                    commit = dropbox.files.CommitInfo(path=target)
+
+                    while f.tell() < file_size:
+
+                        if (file_size - f.tell()) <= CHUNK_SIZE:
+                            print(dbx.files_upload_session_finish(f.read(CHUNK_SIZE), cursor, commit))
+
+                        else:
+                            dbx.files_upload_session_append(f.read(CHUNK_SIZE), cursor.session_id, cursor.offset)
+                            cursor.offset = f.tell()
+
+                        pbar.update(CHUNK_SIZE)
+
         except ApiError as err:
             # This checks for the specific error where a user doesn't have
             # enough Dropbox space quota to upload this file
@@ -65,8 +106,8 @@ def main(token, output_dir):
     print("[INFO] Found", len(file_list), "file(s) to upload.")
 
     # Create an instance of a Dropbox class, which can make requests to the API.
-    print("[INFO] Creating a Dropbox object...")
-    with dropbox.Dropbox(token) as dbx:
+    print("[DEBUG] Creating a Dropbox object.")
+    with dropbox.Dropbox(token, timeout=TIMEOUT) as dbx:
 
         # Check that the access token is valid.
         try:
