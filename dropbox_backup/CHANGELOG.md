@@ -7,9 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- markdown-link-check-disable -->
 
-## [0.5.0](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.5.0) - 2021-12-20
+## [0.5.1](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.5.1) - 2021-12-20
 
 <!-- markdown-link-check-enable -->
+
+### Changed
+
+- Use upload session for large files.
+
+## [0.5.0](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.5.0) - 2021-12-20
+
 
 ### Changed
 
