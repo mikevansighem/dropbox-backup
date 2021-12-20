@@ -11,6 +11,7 @@ from tqdm import tqdm
 TIMEOUT = 900
 CHUNK_SIZE = 4 * 1024 * 1024
 
+
 # Uploads a file to Dropbox
 def upload_file(dbx, file, target):
 
@@ -53,7 +54,6 @@ def upload_file(dbx, file, target):
                             cursor.offset = f.tell()
 
                         pbar.update(CHUNK_SIZE)
-
 
         except ApiError as err:
             # This checks for the specific error where a user doesn't have

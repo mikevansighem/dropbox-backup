@@ -17,7 +17,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.5.0](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.5.0) - 2021-12-20
 
-
 ### Changed
 
 - Added a logo.
