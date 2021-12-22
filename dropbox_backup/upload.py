@@ -6,7 +6,6 @@ import os
 import dropbox
 from dropbox.files import WriteMode
 from dropbox.exceptions import ApiError, AuthError
-from tqdm import tqdm
 
 TIMEOUT = 900
 CHUNK_SIZE = 4 * 1024 * 1024
@@ -36,24 +35,19 @@ def upload_file(dbx, file, target):
 
                 print("[DEBUG] Using upload session.")
 
-                # Use upload session for large files.
-                with tqdm(total=file_size, desc="Uploaded") as pbar:
+                upload_session_start_result = dbx.files_upload_session_start(f.read(CHUNK_SIZE))
+                cursor = dropbox.files.UploadSessionCursor(session_id=upload_session_start_result.session_id, offset=f.tell())
+                commit = dropbox.files.CommitInfo(path=target)
 
-                    upload_session_start_result = dbx.files_upload_session_start(f.read(CHUNK_SIZE))
-                    pbar.update(CHUNK_SIZE)
-                    cursor = dropbox.files.UploadSessionCursor(session_id=upload_session_start_result.session_id, offset=f.tell())
-                    commit = dropbox.files.CommitInfo(path=target)
+                while f.tell() < file_size:
 
-                    while f.tell() < file_size:
+                    if (file_size - f.tell()) <= CHUNK_SIZE:
+                        dbx.files_upload_session_finish(f.read(CHUNK_SIZE), cursor, commit)
 
-                        if (file_size - f.tell()) <= CHUNK_SIZE:
-                            print(dbx.files_upload_session_finish(f.read(CHUNK_SIZE), cursor, commit))
+                    else:
+                        dbx.files_upload_session_append(f.read(CHUNK_SIZE), cursor.session_id, cursor.offset)
+                        cursor.offset = f.tell()
 
-                        else:
-                            dbx.files_upload_session_append(f.read(CHUNK_SIZE), cursor.session_id, cursor.offset)
-                            cursor.offset = f.tell()
-
-                        pbar.update(CHUNK_SIZE)
 
         except ApiError as err:
             # This checks for the specific error where a user doesn't have

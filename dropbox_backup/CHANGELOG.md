@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- markdown-link-check-disable -->
 
-## [0.5.2](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.5.2) - 2021-12-20
+## [0.5.3](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.5.3) - 2021-12-22
 
 <!-- markdown-link-check-enable -->
+
+### Removed
+
+- Removed tqdm as a dependency.
+
+## [0.5.2](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.5.2) - 2021-12-20
 
 ### Changed
 

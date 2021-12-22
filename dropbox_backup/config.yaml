@@ -1,6 +1,6 @@
 ---
 name: Dropbox backup
-version: "0.5.2"
+version: "0.5.3"
 slug: dropbox-backup
 description: "Upload your Home Assistant backups to Dropbox"
 url: https://github.com/mikevansighem/dropbox-backup
