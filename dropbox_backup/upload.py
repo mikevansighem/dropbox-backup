@@ -48,7 +48,6 @@ def upload_file(dbx, file, target):
                         dbx.files_upload_session_append(f.read(CHUNK_SIZE), cursor.session_id, cursor.offset)
                         cursor.offset = f.tell()
 
-
         except ApiError as err:
             # This checks for the specific error where a user doesn't have
             # enough Dropbox space quota to upload this file
