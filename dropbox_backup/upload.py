@@ -9,6 +9,12 @@ from dropbox.exceptions import ApiError, AuthError
 
 TIMEOUT = 900
 CHUNK_SIZE = 4 * 1024 * 1024
+BASE_URL = "http://hassio/"
+
+
+# Get the hassio token for authentication.
+def get_headers():
+    return {"X-HASSIO-KEY": os.environ.get("HASSIO_TOKEN")}
 
 
 # Uploads a file to Dropbox
@@ -18,7 +24,7 @@ def upload_file(dbx, file, target):
     with open(file, 'rb') as f:
 
         try:
-            print("[INFO] Uploading " + file + " to Dropbox as " + target + "...")
+            print("[INFO] Uploading '" + file + "' to Dropbox as '" + target + "'.")
 
             # Get file size
             file_size = os.path.getsize(file)
@@ -61,42 +67,28 @@ def upload_file(dbx, file, target):
                 sys.exit()
 
 
-# Uploads all files to the root folder
-def upload_files(dbx, files, output_dir):
-
-    for file in files:
-        target = os.path.join(output_dir, os.path.basename(file))
-        upload_file(dbx, file, target)
-
-
-# Ensure the outputh dir path is as expected
-def parse_dir(path):
-
-    if path == '/' or path == '//' or len(path) == 0:
-        return '/'
-
-    if path[0] != '/':
-        path = '/' + path
-
-    if path[-1] != '/':
-        path = path + '/'
-
-    return path
-
-
 def main(token, output_dir):
 
     # Check for an access token
     if (len(token) == 0):
         sys.exit("[ERROR] Looks like you didn't add your access token.")
 
-    # Get the list of files to upload.
-    file_list = glob.glob('backup/*.tar', recursive=True)
+    # Get hass headers.
+    my_headers = get_headers()
 
-    if (len(file_list) == 0):
+    # Get backup name and information as a list of dicts.
+    backup_info = requests.get(BASE_URL + "backups", headers=my_headers)
+    backup_info.raise_for_status()
+    hass_backup_list = backup_info.json()["data"]["backups"]
+
+    # Format the file paths
+    upload_list = make_backup_path(hass_backup_list, output_dir)
+
+    # Check if there are any files to upload
+    if (len(upload_list) == 0):
         sys.exit("[INFO] No files found to upload.")
-
-    print("[INFO] Found", len(file_list), "file(s) to upload.")
+    else:
+        print("[INFO] Found", len(upload_list), "file(s) to upload.")
 
     # Create an instance of a Dropbox class, which can make requests to the API.
     print("[DEBUG] Creating a Dropbox object.")
@@ -107,11 +99,10 @@ def main(token, output_dir):
             dbx.users_get_current_account()
         except AuthError:
             sys.exit("[ERROR] Invalid access token; try re-generating an access token from the app console on the web.")
-        # Correct the output directory path.
-        output_dir = parse_dir(output_dir)
 
-        # Upload files.
-        upload_files(dbx, file_list, output_dir)
+        # Upload all files.
+        for backup in upload_list:
+            upload_file(dbx, backup['source'], backup['target'])
 
         print("[INFO] Completed upload(s).")
 
@@ -122,6 +113,7 @@ if __name__ == '__main__':
 
     parser.add_argument("token", type=str, help="Dropbox OAuth2 access token.")
     parser.add_argument("output_dir", type=str, help="Output directory.")
+    parser.add_argument("preserve_filename", type=str, help="Preserve original backup filename.")
 
     args = parser.parse_args()
-    main(args.token, args.output_dir)
+    main(args.token, args.output_dir, args.preserve_filename)

@@ -27,18 +27,16 @@ echo "[Info] Listening for messages via stdin service call..."
 # listen for input
 while read -r msg; do
     # parse JSON
-    echo "$msg"
     cmd="$(echo "$msg" | jq --raw-output '.command')"
     echo "[Info] Received message with command ${cmd}"
     if [[ $cmd = "upload" ]]; then
 
         # Upload files
-        echo "[Info] Uploading all .tar files in /backup"
-        python3 /upload.py "$TOKEN" "$OUTPUT_DIR"
+        python3 /upload.py "$TOKEN" "$OUTPUT_DIR" "$PRESERVE_FILENAME"
 
         # Remove stale backups
         if [[ "$KEEP_LAST" ]]; then
-            echo "[Info] keep_last option is set, cleaning up files..."
+            echo "[Info] Keep last option is set, cleaning up files..."
             python3 /keep_last.py "$KEEP_LAST"
         fi
 
