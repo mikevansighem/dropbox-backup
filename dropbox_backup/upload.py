@@ -79,7 +79,7 @@ def make_backup_path(hass_backup_list, output_dir, preserve_filename=False):
         source = os.path.join('backup', source)
 
         # Choose new file name
-        if preserve_filename == True:
+        if preserve_filename is True:
             target = hass_backup['slug'] + ".tar"
         else:
             target = hass_backup['name'] + ".tar"
