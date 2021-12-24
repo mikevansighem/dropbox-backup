@@ -1,6 +1,6 @@
 import sys
 import argparse
-import glob
+import requests
 import os
 
 import dropbox
@@ -65,6 +65,33 @@ def upload_file(dbx, file, target):
             else:
                 print(err)
                 sys.exit()
+
+
+# Take backups from hass and define set paths.
+def make_backup_path(hass_backup_list, output_dir, preserve_filename=False):
+
+    upload_list = []
+
+    for hass_backup in hass_backup_list:
+
+        # Add extension and folder to path.
+        source = hass_backup['slug'] + ".tar"
+        source = os.path.join('backup', source)
+
+        # Choose new file name
+        if preserve_filename == True:
+            target = hass_backup['slug'] + ".tar"
+        else:
+            target = hass_backup['name'] + ".tar"
+
+        # Add target folder to path
+        target = os.path.join(output_dir, target)
+
+        # Add to list
+        output = {'source': source, 'target': target}
+        upload_list.append(output)
+
+    return upload_list
 
 
 def main(token, output_dir):
