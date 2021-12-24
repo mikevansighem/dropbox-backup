@@ -7,9 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 <!-- markdown-link-check-disable -->
 
-## [0.5.3](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.5.3) - 2021-12-22
+## [0.5.4](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.5.4) - 2021-12-24
 
 <!-- markdown-link-check-enable -->
+
+### Changed
+
+- Improved log messages.
+
+### Added
+
+- Rename backup files to the backup name (e.g. 'my_backup.tar' instead of '36tdff.tar').
+
+## [0.5.3](https://github.com/mikevansighem/dropbox-backup/releases/tag/0.5.3) - 2021-12-22
 
 ### Removed
 
