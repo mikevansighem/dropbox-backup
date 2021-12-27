@@ -68,7 +68,7 @@ def upload_file(dbx, file, target):
 
 
 # Take backups from hass and define set paths.
-def make_backup_path(hass_backup_list, output_dir, preserve_filename=False):
+def make_backup_path(hass_backup_list, output_dir, preserve_filename):
 
     upload_list = []
 
@@ -94,7 +94,7 @@ def make_backup_path(hass_backup_list, output_dir, preserve_filename=False):
     return upload_list
 
 
-def main(token, output_dir):
+def main(token, output_dir, preserve_filename):
 
     # Check for an access token
     if (len(token) == 0):
@@ -109,7 +109,7 @@ def main(token, output_dir):
     hass_backup_list = backup_info.json()["data"]["backups"]
 
     # Format the file paths
-    upload_list = make_backup_path(hass_backup_list, output_dir)
+    upload_list = make_backup_path(hass_backup_list, output_dir, preserve_filename)
 
     # Check if there are any files to upload
     if (len(upload_list) == 0):
