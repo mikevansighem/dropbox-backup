@@ -3,4 +3,4 @@
 requests==2.27.1
 python-dateutil==2.8.2
 pytz==2021.3
-dropbox==11.27.0
+dropbox==11.30.0
