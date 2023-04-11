@@ -30,7 +30,7 @@ from [Daniel Welch](https://github.com/danielwelch). Major thanks for his work!
 
 1. Go to the Supervisor add-on store in Home Assistant.
 1. Click on the "three-dots-menu" and choose `Repositories`.
-1. Add this repository to your Home Assistant instance: `https://github.com/mikevansighem/dropbox_sync`.
+1. Add this repository to your Home Assistant instance: `https://github.com/mikevansighem/dropbox-backup`.
 1. Install the Dropbox backup add-on.
 1. Configure the add-on with your Dropbox OAuth Token and desired output directory (see configuration below).
 
