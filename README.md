@@ -3,7 +3,7 @@
 [![Last commit](https://img.shields.io/github/last-commit/mikevansighem/dropbox-backup?style=flat-square)](https://github.com/mikevansighem/dropbox-backup/commits/main)
 [![Commits per month](https://img.shields.io/github/commit-activity/m/mikevansighem/dropbox-backup?style=flat-square)](https://github.com/mikevansighem/dropbox-backup/commits/main)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey?style=flat-square)](https://github.com/mikevansighem/dropbox-backup/blob/main/LICENSE.md)
-[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/mikevansighem/dropbox-backup/CI?style=flat-square)](https://github.com/mikevansighem/dropbox-backup/actions)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/mikevansighem/dropbox-backup/.github/workflows/ci.yaml?branch=main?style=flat-square)](https://github.com/mikevansighem/dropbox-backup/actions)
 [![GitHub issues](https://img.shields.io/github/issues-raw/mikevansighem/dropbox-backup?style=flat-square)](https://github.com/mikevansighem/dropbox-backup/issues)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/mikevansighem/dropbox-backup?style=flat-square)](https://github.com/mikevansighem/dropbox-backup/releases)
 
