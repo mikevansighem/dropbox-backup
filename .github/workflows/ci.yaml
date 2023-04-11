@@ -24,7 +24,7 @@ jobs:
       target: ${{ steps.information.outputs.target }}
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.5.0
       - name: 🚀 Run add-on information action
         id: information
         uses: frenck/action-addon-information@v1.4.0
@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.5.0
       - name: 🚀 Run Hadolint
         uses: brpaz/hadolint-action@v1.5.0
         with:
@@ -56,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.5.0
       - name: 🚀 Run mdl
         uses: actionshub/markdownlint@main
         with:
@@ -67,7 +67,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.5.0
       - name: 🚀 Run Shellcheck
         uses: ludeeus/action-shellcheck@1.1.0
         env:
@@ -78,7 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.5.0
       - name: 🚀 Run YAMLLint
         uses: frenck/action-yamllint@v1.2
 
@@ -87,7 +87,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.5.0
       - name: 🏗 Set up Python environment
         uses: actions/setup-python@v4.2.0
       - name: 🚀 Run Flake8
@@ -98,7 +98,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.5.0
       - name: 🏗 Set up Python environment
         uses: actions/setup-python@v4.2.0
       - name: 🏗 Install dependencies
@@ -114,7 +114,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.5.0
       - name: 🚀 Run Markdown link check
         uses: gaurav-nelson/github-action-markdown-link-check@v1
 
@@ -123,7 +123,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.5.0
       - name: 🚀 Run JQ
         run: |
           shopt -s globstar
@@ -133,7 +133,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.5.0
       - name: 🚀 Run Home Assistant Add-on Lint
         uses: frenck/action-addon-linter@v2.9
         with:
@@ -161,7 +161,7 @@ jobs:
 
     steps:
       - name: ⤵️ Check out code from GitHub
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.5.0
       - name: 🏗 Set up build cache
         id: cache
         uses: actions/cache@v3.2.6
