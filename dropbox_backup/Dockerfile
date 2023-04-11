@@ -36,7 +36,7 @@ LABEL \
 
 # Install dependancies
 COPY requirements.txt /
-RUN apk add --no-cache findutils==4.8.0-r1 python3==3.9.5-r2 python3-dev==3.9.5-r2 py3-pip==20.3.4-r1 && \
+RUN apk add --no-cache findutils==4.8.0-r1 python3==3.9.16-r0 python3-dev==3.9.16-r0 py3-pip==20.3.4-r1 && \
     pip3 install --no-cache-dir -r requirements.txt
 
 # Copy Python files
