@@ -80,7 +80,7 @@ jobs:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3.5.0
       - name: 🚀 Run YAMLLint
-        uses: frenck/action-yamllint@v1.2
+        uses: frenck/action-yamllint@v1.4
 
   lint-flake8:
     name: Flake8
