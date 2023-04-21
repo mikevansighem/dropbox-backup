@@ -89,7 +89,7 @@ jobs:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3.5.2
       - name: 🏗 Set up Python environment
-        uses: actions/setup-python@v4.5.0
+        uses: actions/setup-python@v4.6.0
       - name: 🚀 Run Flake8
         uses: py-actions/flake8@v2
 
@@ -100,7 +100,7 @@ jobs:
       - name: ⤵️ Check out code from GitHub
         uses: actions/checkout@v3.5.2
       - name: 🏗 Set up Python environment
-        uses: actions/setup-python@v4.5.0
+        uses: actions/setup-python@v4.6.0
       - name: 🏗 Install dependencies
         run: |
           python -m pip install --upgrade pip
